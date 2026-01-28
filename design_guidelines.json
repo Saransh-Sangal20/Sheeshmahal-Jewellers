@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "name": "Sheeshmahal Jewellers",
+    "persona": "E1 - The Anti-AI Designer",
+    "vibe": "Modern Minimal Luxury",
+    "archetype": "Jewel & Luxury (Adapted for Light Theme)",
+    "principles": [
+      "Fusion over Imitation: Mix Heritage with Modern Minimalism",
+      "Emotion First: Trust, Purity, Elegance",
+      "Content is King: The Jewellery is the Hero",
+      "Negative Space: Generous breathing room",
+      "Contrast: Sharp Black text on Warm Cream backgrounds"
+    ]
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Playfair Display, serif",
+      "weights": ["400", "600", "700"],
+      "usage": "All Section Headings, Hero Titles, Product Names",
+      "tailwind_class": "font-serif tracking-tight"
+    },
+    "body": {
+      "font_family": "Manrope, sans-serif",
+      "weights": ["300", "400", "500"],
+      "usage": "Paragraphs, UI Elements, Navigation, Buttons",
+      "tailwind_class": "font-sans tracking-wide"
+    },
+    "installation": "Import from Google Fonts in index.css: @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');"
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "name": "Obsidian",
+        "hex": "#1c1917",
+        "tailwind": "bg-stone-900",
+        "usage": "Primary Buttons, Footer, Strong Text"
+      },
+      "secondary": {
+        "name": "Warm Cream",
+        "hex": "#fafaf9",
+        "tailwind": "bg-stone-50",
+        "usage": "Page Backgrounds, Card Backgrounds"
+      },
+      "accent": {
+        "name": "Antique Gold",
+        "hex": "#d97706",
+        "tailwind": "text-amber-600",
+        "usage": "Highlights, Icons, Subtle Borders (Never main buttons)"
+      },
+      "neutral": {
+        "name": "Stone Grey",
+        "hex": "#78716c",
+        "tailwind": "text-stone-500",
+        "usage": "Secondary Text, Borders"
+      }
+    },
+    "rules": [
+      "NO Gradients on text",
+      "NO Teal or Purple",
+      "Backgrounds should be off-white (Stone-50), never pure white (#ffffff) for main sections to reduce eye strain and add warmth.",
+      "Text should be Stone-900, never pure black."
+    ]
+  },
+  "layout_strategies": {
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "spacing": "Generous. Use py-20 or py-24 for section spacing.",
+    "grid_system": {
+      "gallery": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12",
+      "bento": "Use 'Tetris' grid for Home Page categories (See E1 Spacing Strategy)"
+    },
+    "z_index": {
+      "navbar": "z-50",
+      "modal": "z-50",
+      "dropdown": "z-40"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-stone-900 text-stone-50 hover:bg-stone-800 rounded-none px-8 py-6 uppercase tracking-widest text-xs font-bold transition-all duration-300",
+      "secondary": "border border-stone-200 text-stone-900 hover:border-stone-900 hover:bg-transparent rounded-none px-8 py-6 uppercase tracking-widest text-xs font-bold transition-all duration-300",
+      "ghost": "text-stone-900 hover:text-amber-700 hover:bg-transparent uppercase tracking-widest text-xs font-bold"
+    },
+    "cards": {
+      "product": "group relative bg-transparent border-none shadow-none overflow-hidden",
+      "feature": "bg-white p-8 border border-stone-100 hover:border-stone-200 transition-all duration-300"
+    },
+    "inputs": {
+      "style": "rounded-none border-stone-200 focus:border-stone-900 focus:ring-0 bg-transparent"
+    },
+    "navigation": {
+      "style": "backdrop-blur-md bg-white/80 border-b border-stone-100 sticky top-0"
+    }
+  },
+  "image_urls": {
+    "hero": [
+      {
+        "url": "https://images.unsplash.com/photo-1737515046830-1680d82e043c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwzfHxpbmRpYW4lMjBicmlkYWwlMjBqZXdlbGxlcnklMjBzZXQlMjBtb2RlbHxlbnwwfHx8fDE3Njk1ODYwOTB8MA&ixlib=rb-4.1.0&q=85",
+        "category": "hero_main",
+        "description": "Elegant Indian Bridal Model"
+      },
+      {
+        "url": "https://images.pexels.com/photos/29371789/pexels-photo-29371789.jpeg",
+        "category": "hero_secondary",
+        "description": "Gold Necklace Detail"
+      }
+    ],
+    "gallery": [
+      {
+        "url": "https://images.pexels.com/photos/32780784/pexels-photo-32780784.jpeg",
+        "category": "necklace",
+        "description": "Gold Necklace"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1760081912307-fe4c5cc3aee0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwxfHxkaWFtb25kJTIwcmluZyUyMGx1eHVyeSUyMG1hY3JvJTIwc2hvdHxlbnwwfHx8fDE3Njk1ODYwODZ8MA&ixlib=rb-4.1.0&q=85",
+        "category": "ring",
+        "description": "Diamond Ring Macro"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1762019313711-8b5d1e4f7ba4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwyfHxkaWFtb25kJTIwcmluZyUyMGx1eHVyeSUyMG1hY3JvJTIwc2hvdHxlbnwwfHx8fDE3Njk1ODYwODZ8MA&ixlib=rb-4.1.0&q=85",
+        "category": "ring",
+        "description": "Sapphire Ring"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1653227907877-e097195908fb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBqZXdlbGxlcnklMjBzaG93cm9vbSUyMGludGVyaW9yJTIwbGlnaHRpbmd8ZW58MHx8fHwxNzY5NTg2MDg4fDA&ixlib=rb-4.1.0&q=85",
+        "category": "earrings",
+        "description": "Earrings on Branch"
+      }
+    ],
+    "about": [
+      {
+        "url": "https://images.unsplash.com/photo-1754573433744-bf2b79d0eaf4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBqZXdlbGxlcnklMjBzaG93cm9vbSUyMGludGVyaW9yJTIwbGlnaHRpbmd8ZW58MHx8fHwxNzY5NTg2MDg4fDA&ixlib=rb-4.1.0&q=85",
+        "category": "showroom",
+        "description": "Showroom Interior Shelf"
+      }
+    ]
+  },
+  "motion": {
+    "libraries": ["framer-motion", "lenis"],
+    "guidelines": [
+      "Use Lenis for smooth scrolling (MANDATORY).",
+      "Images should have a slow zoom-out effect on scroll (Parallax).",
+      "Text should reveal line-by-line with a stagger effect.",
+      "Hover states on cards should be subtle (scale 1.02, opacity change)."
+    ]
+  },
+  "accessibility": {
+    "contrast": "Ensure Stone-500 text is only used on Stone-50 backgrounds for sufficient contrast. Use Stone-900 for critical info.",
+    "focus_states": "Visible focus rings in Amber-600.",
+    "aria": "All images must have alt text. Interactive elements must have aria-labels."
+  },
+  "instructions_to_main_agent": [
+    "1. CLEANUP: Remove default React logos and App.css styles. Reset to a clean slate.",
+    "2. SETUP: Install 'lenis' and 'framer-motion' immediately.",
+    "3. FONTS: Add Google Fonts import to index.css first.",
+    "4. COMPONENTS: Use Shadcn for complex interactions (Dialog, Sheet, Form) but style them to match the 'Stone & Gold' theme.",
+    "5. PAGES: Build Home, Gallery, About, Contact, Location, Admin Login, Admin Dashboard.",
+    "6. ADMIN: The Admin panel should be functional. Use a simple hardcoded secret or JWT if backend is ready. For now, mock the auth if backend isn't fully connected.",
+    "7. MAPS: Use an iframe for Google Maps in the Location page.",
+    "8. REVIEWS: Mock the Google Reviews section with a horizontal scroll marquee.",
+    "9. NO CART: Ensure NO 'Add to Cart' buttons exist. Use 'Visit Store' or 'Call for Price'.",
+    "10. TESTING: Add data-testid to all buttons and inputs."
+  ],
+  "universal_guidelines": [
+    "Do not use gradients on text.",
+    "Do not use generic centered layouts.",
+    "Use 2-3x more spacing than usual.",
+    "Never use pure black (#000000).",
+    "Use named exports for components."
+  ]
+}
