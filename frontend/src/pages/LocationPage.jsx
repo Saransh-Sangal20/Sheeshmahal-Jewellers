@@ -52,7 +52,7 @@ export const LocationPage = () => {
                     <h3 className="font-serif text-lg text-stone-900 font-medium mb-2">
                       Address
                     </h3>
-                    <p className="text-stone-600 text-sm leading-relaxed">
+                    <p className="text-stone-700 text-sm leading-relaxed">
                       Nati Imli, Bauliabagh,
                       <br />
                       near Rani Sati Mandir,
@@ -75,7 +75,7 @@ export const LocationPage = () => {
                     </h3>
                     <a
                       href="tel:+919839555066"
-                      className="text-stone-600 hover:text-amber-600 transition-colors"
+                      className="text-stone-700 hover:text-amber-600 transition-colors"
                       data-testid="location-phone"
                     >
                       +91 98395 55066
@@ -94,7 +94,7 @@ export const LocationPage = () => {
                     <h3 className="font-serif text-lg text-stone-900 font-medium mb-2">
                       Opening Hours
                     </h3>
-                    <div className="text-stone-600 text-sm space-y-1">
+                    <div className="text-stone-700 text-sm space-y-1">
                       <p>Weekdays: 10:00 AM - 8:00 PM</p>
                       <p>Saturday: 10:00 AM - 7:30 PM</p>
                       <p>Sunday: Closed</p>
