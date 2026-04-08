@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Award, Users, Heart, Gem } from "lucide-react";
+import about from "../assets/about.png";
+import about2 from "../assets/about2.png";
 
 const SHOWROOM_IMAGE = "https://images.unsplash.com/photo-1754573433744-bf2b79d0eaf4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBqZXdlbGxlcnklMjBzaG93cm9vbSUyMGludGVyaW9yJTIwbGlnaHRpbmd8ZW58MHx8fHwxNzY5NTg2MDg4fDA&ixlib=rb-4.1.0&q=85";
 
@@ -34,23 +36,35 @@ export const AboutPage = () => {
   return (
     <div className="bg-stone-50 min-h-screen" data-testid="about-page">
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-white border-b border-stone-100">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={about}
+            alt="Sheeshmahal Jewellers Showroom in Varanasi"
+            className="w-full h-full object-cover object-[center_30%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/70 via-stone-900/60 to-stone-900/70" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center"
           >
-            <span className="uppercase tracking-[0.3em] text-xs text-amber-600 font-medium mb-4 block">
+            <span className="uppercase tracking-[0.3em] text-sm text-amber-400 font-semibold mb-4 block">
               Our Story
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl text-stone-900 font-semibold mb-4">
-              About Sheeshmahal
+
+            <h1 className="font-serif text-4xl md:text-5xl text-white font-semibold mb-4">
+              About Sheeshmahal <span className="text-amber-500">Jewellers</span>
             </h1>
-            <p className="text-stone-500 text-lg max-w-2xl mx-auto">
-              A legacy of trust, craftsmanship, and elegance in the heart of
-              Varanasi.
+
+            <p className="text-stone-300 text-lg max-w-2xl mx-auto">
+              Rooted in the heart of Varanasi, we craft jewellery that blends tradition, elegance, and timeless beauty for generations.
             </p>
           </motion.div>
         </div>
@@ -68,7 +82,7 @@ export const AboutPage = () => {
             >
               <div className="aspect-[4/5] overflow-hidden">
                 <img
-                  src={SHOWROOM_IMAGE}
+                  src={about2}
                   alt="Sheeshmahal Jewellers Showroom"
                   className="w-full h-full object-cover"
                 />
@@ -81,7 +95,7 @@ export const AboutPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="uppercase tracking-[0.3em] text-xs text-amber-600 font-medium mb-4 block">
+              <span className="uppercase tracking-[0.3em] text-sm text-amber-600 font-semibold mb-4 block">
                 Since Generations
               </span>
               <h2 className="font-serif text-3xl md:text-4xl text-stone-900 font-semibold mb-6">
@@ -89,25 +103,10 @@ export const AboutPage = () => {
               </h2>
               <div className="space-y-4 text-stone-600 leading-relaxed">
                 <p>
-                  Nestled in the ancient city of Varanasi, Sheeshmahal Jewellers
-                  has been a beacon of trust and excellence in fine jewellery
-                  for generations. Our journey began with a simple vision: to
-                  create jewellery that captures the essence of Indian heritage
-                  while embracing contemporary elegance.
-                </p>
-                <p>
-                  Located near the iconic Rani Sati Mandir in Nati Imli,
-                  Bauliabagh, our showroom has witnessed countless celebrations —
-                  from weddings to anniversaries, from festivals to milestones.
-                  Each piece that leaves our store carries with it the blessings
-                  of Varanasi's rich cultural tapestry.
-                </p>
-                <p>
-                  Our artisans are not just craftsmen; they are keepers of
-                  ancient traditions. Using techniques refined over centuries,
-                  they transform precious metals and gemstones into wearable
-                  art. Every necklace, every ring, every bangle tells a story of
-                  dedication and passion.
+                  For over 50 years, Sheeshmahal Jewellers has been a trusted name in fine gold, silver and diamond jewellery in Varanasi, 
+                  blending timeless craftsmanship with modern elegance. 
+                  Located near Rani Sati Mandir, our showroom has been part of countless weddings, celebrations, and cherished moments across generations. 
+                  Every piece we create reflects the rich heritage of Varanasi, crafted by skilled artisans who transform precious metals and gemstones into timeless works of art.
                 </p>
               </div>
             </motion.div>
@@ -116,7 +115,7 @@ export const AboutPage = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-20 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -124,7 +123,7 @@ export const AboutPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="uppercase tracking-[0.3em] text-xs text-amber-600 font-medium mb-4 block">
+            <span className="uppercase tracking-[0.3em] text-sm text-amber-600 font-semibold mb-4 block">
               Our Values
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-stone-900 font-semibold">
@@ -140,7 +139,7 @@ export const AboutPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="text-center p-8 border border-stone-100 hover:border-amber-200 transition-colors duration-300"
+                className="text-center p-8 border border-stone-100 shadow-sm hover:border-stone-300 hover:shadow-md transition-colors duration-300"
                 data-testid={`value-card-${index}`}
               >
                 <div className="w-14 h-14 mx-auto mb-6 bg-stone-900 flex items-center justify-center">

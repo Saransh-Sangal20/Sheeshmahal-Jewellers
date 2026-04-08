@@ -22,17 +22,14 @@ export const JewelleryCard = ({ item }) => {
 
       {/* Content */}
       <div className="space-y-2">
-        <span className="uppercase tracking-widest text-xs text-amber-600 font-medium">
+        <span className="uppercase tracking-widest text-sm text-amber-600 font-semibold">
           {item.category}
         </span>
-        <h3 className="font-serif text-xl text-stone-900 font-medium">
+        <h3 className="font-serif text-xl text-stone-900 font-semibold">
           {item.name}
         </h3>
         <p className="text-stone-500 text-sm leading-relaxed line-clamp-2">
           {item.description}
-        </p>
-        <p className="text-stone-400 text-xs uppercase tracking-wider pt-2">
-          Visit Store for Price
         </p>
       </div>
     </motion.div>

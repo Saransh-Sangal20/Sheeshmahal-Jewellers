@@ -57,23 +57,35 @@ export const GalleryPage = () => {
   return (
     <div className="bg-stone-50 min-h-screen" data-testid="gallery-page">
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-white border-b border-stone-100">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1600"
+            alt="Luxury Jewellery Showroom"
+            className="w-full h-full object-cover object-[center_40%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/60 via-stone-900/50 to-stone-900/70" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center"
           >
-            <span className="uppercase tracking-[0.3em] text-xs text-amber-600 font-medium mb-4 block">
+            <span className="uppercase tracking-[0.3em] text-sm text-amber-400 font-semibold mb-4 block">
               Our Collection
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl text-stone-900 font-semibold mb-4">
+
+            <h1 className="font-serif text-4xl md:text-5xl text-white font-semibold mb-4">
               Jewellery Gallery
             </h1>
-            <p className="text-stone-500 text-lg max-w-2xl mx-auto">
-              Explore our exquisite collection of handcrafted jewellery. Each
-              piece is crafted with precision and passion by master artisans.
+
+            <p className="text-stone-300 text-lg max-w-2xl mx-auto">
+              Explore our exquisite collection of handcrafted jewellery. Each piece is crafted with precision and passion by master artisans.
             </p>
           </motion.div>
         </div>
@@ -91,7 +103,7 @@ export const GalleryPage = () => {
                 className={`rounded-none px-6 py-2 uppercase tracking-widest text-xs font-medium whitespace-nowrap transition-all duration-300 ${
                   activeCategory === category
                     ? "bg-stone-900 text-stone-50"
-                    : "border-stone-200 text-stone-600 hover:border-stone-900"
+                    : "text-stone-600"
                 }`}
                 data-testid={`filter-${category.toLowerCase()}`}
               >
@@ -136,7 +148,7 @@ export const GalleryPage = () => {
       <section className="py-16 md:py-20 bg-white border-t border-stone-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
           <h3 className="font-serif text-2xl md:text-3xl text-stone-900 font-semibold mb-4">
-            Can't Find What You're Looking For?
+            Let Us Help You Find Your Perfect Jewellery
           </h3>
           <p className="text-stone-500 mb-6 max-w-lg mx-auto">
             Visit our showroom to explore our complete collection or call us for
@@ -145,7 +157,7 @@ export const GalleryPage = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               asChild
-              className="bg-stone-900 text-stone-50 hover:bg-stone-800 rounded-none px-8 py-6 uppercase tracking-widest text-xs font-bold"
+              className="bg-amber-500 text-stone-50 hover:bg-stone-800 rounded-none px-8 py-6 uppercase tracking-widest text-xs font-bold"
               data-testid="gallery-call-btn"
             >
               <a href="tel:+919839555066">Call: +91 98395 55066</a>

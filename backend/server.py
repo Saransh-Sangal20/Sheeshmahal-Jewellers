@@ -204,7 +204,7 @@ async def create_default_admin():
                 "name": "Royal Gold Necklace",
                 "category": "Gold",
                 "description": "Exquisite 22 karat gold necklace with traditional Varanasi craftsmanship. Perfect for weddings and special occasions.",
-                "imageUrl": "https://images.pexels.com/photos/32780784/pexels-photo-32780784.jpeg",
+                "imageUrl": "https://plus.unsplash.com/premium_photo-1724762183134-c17cf5f5bed2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 "createdAt": datetime.now(timezone.utc).isoformat()
             },
             {
@@ -212,7 +212,7 @@ async def create_default_admin():
                 "name": "Diamond Solitaire Ring",
                 "category": "Diamond",
                 "description": "Elegant diamond solitaire ring featuring a brilliant cut diamond set in 18k white gold.",
-                "imageUrl": "https://images.unsplash.com/photo-1760081912307-fe4c5cc3aee0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwxfHxkaWFtb25kJTIwcmluZyUyMGx1eHVyeSUyMG1hY3JvJTIwc2hvdHxlbnwwfHx8fDE3Njk1ODYwODZ8MA&ixlib=rb-4.1.0&q=85",
+                "imageUrl": "https://images.unsplash.com/photo-1607703829739-c05b7beddf60?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 "createdAt": datetime.now(timezone.utc).isoformat()
             },
             {
@@ -220,7 +220,7 @@ async def create_default_admin():
                 "name": "Traditional Silver Anklet",
                 "category": "Silver",
                 "description": "Handcrafted silver anklet with intricate jhankar bells. A beautiful piece of Indian heritage.",
-                "imageUrl": "https://images.unsplash.com/photo-1653227907877-e097195908fb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBqZXdlbGxlcnklMjBzaG93cm9vbSUyMGludGVyaW9yJTIwbGlnaHRpbmd8ZW58MHx8fHwxNzY5NTg2MDg4fDA&ixlib=rb-4.1.0&q=85",
+                "imageUrl": "https://imgs.search.brave.com/GZi-9JrlfRpn8kXUE0JCJecmltT4wsgco4Np1_37rqw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2JlLzc0/L2MyL2JlNzRjMmY3/MjY3NzZiYzZkOWQ1/MzljYTQ4ZjE4ZjQ3/LmpwZw",
                 "createdAt": datetime.now(timezone.utc).isoformat()
             },
             {
@@ -244,7 +244,7 @@ async def create_default_admin():
                 "name": "Temple Gold Earrings",
                 "category": "Gold",
                 "description": "Traditional temple-style gold earrings with detailed engravings. Handcrafted by master artisans.",
-                "imageUrl": "https://images.pexels.com/photos/29371789/pexels-photo-29371789.jpeg",
+                "imageUrl": "https://images.unsplash.com/photo-1651160670627-2896ddf7822f?q=80&w=768&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 "createdAt": datetime.now(timezone.utc).isoformat()
             }
         ]

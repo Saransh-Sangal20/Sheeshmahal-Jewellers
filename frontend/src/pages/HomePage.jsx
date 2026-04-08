@@ -160,7 +160,7 @@ export const HomePage = () => {
             className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6"
           >
             <div>
-              <span className="uppercase tracking-[0.3em] text-xs text-amber-600 font-medium mb-4 block">
+              <span className="uppercase tracking-[0.3em] text-sm text-amber-600 font-semibold mb-4 block">
                 Handpicked for You
               </span>
               <h2 className="font-serif text-3xl md:text-4xl text-stone-900 font-semibold">
@@ -170,7 +170,7 @@ export const HomePage = () => {
             <Button
               asChild
               variant="ghost"
-              className="text-stone-900 hover:text-amber-600 uppercase tracking-widest text-xs font-bold"
+              className="text-stone-900 hover:bg-amber-500 hover:text-stone-50 uppercase tracking-widest text-xs font-bold"
               data-testid="view-all-btn"
             >
               <Link to="/gallery">
@@ -210,10 +210,10 @@ export const HomePage = () => {
                       loading="lazy"
                     />
                   </div>
-                  <span className="uppercase tracking-widest text-xs text-amber-600 font-medium">
+                  <span className="uppercase tracking-widest text-sm font-semibold text-amber-600">
                     {item.category}
                   </span>
-                  <h3 className="font-serif text-xl text-stone-900 font-medium mt-1">
+                  <h3 className="font-serif text-xl text-stone-900 font-semibold mt-1">
                     {item.name}
                   </h3>
                   <p className="text-stone-500 text-sm mt-1 line-clamp-2">
@@ -236,30 +236,34 @@ export const HomePage = () => {
             className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6"
           >
             <div>
-              <span className="uppercase tracking-[0.3em] text-sm text-amber-600 font-extrabold mb-4 block">
+              <span className="uppercase tracking-[0.3em] text-sm text-amber-600 font-semibold mb-4 block">
                 Customer Stories
               </span>
               <h2 className="font-serif text-3xl md:text-4xl text-stone-900 font-semibold">
                 What Our Customers Say
               </h2>
             </div>
+            <Button 
+            variant="ghost"
+            className="text-stone-900 hover:bg-amber-500 hover:text-stone-50 rounded-none uppercase tracking-widest text-xs font-bold transition-all duration-300">
             <a
               href="https://www.google.com/maps/place/Sheeshmahal+Jewellers/@25.3222549,82.9551871,13z/data=!4m7!3m6!1s0x398e2f04645bedcb:0x839f33c7437a3086!8m2!3d25.3271982!4d83.0032499!15sCgxzaGVlc2ggbWFoYWxaDiIMc2hlZXNoIG1haGFskgENamV3ZWxyeV9zdG9yZeABAA!16s%2Fg%2F11s1w1g192?coh=164777&entry=tt&shorturl=1"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-stone-600 hover:text-amber-600 transition-colors text-sm"
+              className="flex items-center gap-2 text-stone-800 hover:text-stone-50 transition-colors text-sm"
               data-testid="google-reviews-link"
             >
               <ExternalLink className="w-4 h-4" />
               Review us on Google
             </a>
+            </Button>
           </motion.div>
         </div>
 
         {/* Marquee Reviews */}
         {reviews.length > 0 && (
           <div className="relative">
-            <div className="flex gap-6 animate-marquee">
+            <div className="flex gap-6 animate-marquee border-gray-600">
               {[...reviews, ...reviews].map((review, index) => (
                 <ReviewCard key={`${review.id}-${index}`} review={review} />
               ))}
