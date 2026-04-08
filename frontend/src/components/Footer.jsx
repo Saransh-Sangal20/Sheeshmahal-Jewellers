@@ -3,11 +3,11 @@ import { MapPin, Phone, Clock, Facebook, Instagram, Youtube, MessageCircle } fro
 
 export const Footer = () => {
   const whyShopReasons = [
+    "Legacy of Trust Since 50+ Years",
     "Trusted by families for generations in Varanasi",
-    "BIS hallmarked gold & certified diamonds",
-    "Expert artisans with traditional craftsmanship",
-    "Transparent pricing with no hidden charges",
-    "Lifetime free cleaning & polishing service",
+    "Hallmarked Gold & Certified Diamond Jewellery",
+    "Premium Jewellery Collection in Varanasi",
+    "Perfect for Weddings & Celebrations",
   ];
 
   return (
@@ -16,7 +16,7 @@ export const Footer = () => {
       <div className="border-b border-stone-800">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
           <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-8 text-center">
-            Why Shop at <span className="text-amber-500">Sheeshmahal</span>?
+            Why Shop at <span className="text-amber-500">Sheeshmahal Jewellers</span> in Varanasi?
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {whyShopReasons.map((reason, index) => (
@@ -42,18 +42,17 @@ export const Footer = () => {
           <div>
             <h4 className="font-serif text-2xl font-semibold mb-4">
               Sheeshmahal
-              <span className="block text-amber-500 text-lg italic">
+              <span className="block text-amber-500 text-lg">
                 Jewellers
               </span>
             </h4>
             <p className="text-stone-400 text-sm leading-relaxed mb-6">
-              A legacy of trust and elegance in the heart of Varanasi. 
-              Crafting precious memories since generations.
+              A legacy of trust and timeless elegance in the heart of Varanasi, crafting precious memories for generations.
             </p>
             {/* Social Links */}
             <div className="flex gap-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/1AzM9fEE9j/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-stone-800 hover:bg-amber-600 transition-colors duration-300 rounded-none"
@@ -63,7 +62,7 @@ export const Footer = () => {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/sheeshmahal__jewellers?igsh=NnhyM3luMDVpOHo2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-stone-800 hover:bg-amber-600 transition-colors duration-300 rounded-none"
@@ -71,16 +70,6 @@ export const Footer = () => {
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center bg-stone-800 hover:bg-amber-600 transition-colors duration-300 rounded-none"
-                data-testid="social-youtube"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-5 h-5" />
               </a>
               <a
                 href="https://wa.me/919839555066"
@@ -176,9 +165,8 @@ export const Footer = () => {
             <div className="flex items-start gap-3 text-stone-400">
               <Clock className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
               <div className="text-sm">
-                <p>Weekdays: 10:00 AM - 8:00 PM</p>
-                <p>Saturday: 10:00 AM - 7:30 PM</p>
-                <p>Sunday: Closed</p>
+                <p>Weekdays: 10:00 AM - 9:00 PM</p>
+                <p>Sunday: 10:00 AM - 6:00 PM</p>
               </div>
             </div>
           </div>

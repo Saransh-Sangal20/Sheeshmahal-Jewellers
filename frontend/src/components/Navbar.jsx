@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import logo from "@/assets/logo.png";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,7 @@ export const Navbar = () => {
 
   return (
     <nav
-      className="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-stone-100"
+      className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100"
       data-testid="navbar"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -28,13 +29,14 @@ export const Navbar = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center gap-3"
+            className="flex items-center gap-2"
             data-testid="navbar-logo"
           >
+            <img src={logo} alt="sheeshmahal-jewellers-logo" className="w-35 h-20"/>
             <span className="font-serif text-2xl md:text-3xl font-semibold text-stone-900 tracking-tight">
               Sheeshmahal
             </span>
-            <span className="hidden sm:block text-amber-600 font-serif text-lg italic">
+            <span className="hidden sm:block text-amber-600 font-serif text-2xl font-semibold">
               Jewellers
             </span>
           </Link>
@@ -46,9 +48,9 @@ export const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 data-testid={`nav-link-${link.name.toLowerCase()}`}
-                className={`uppercase tracking-widest text-xs font-medium transition-colors duration-300 ${
+                className={`uppercase tracking-widest text-sm font-medium transition-colors duration-300 ${
                   isActive(link.path)
-                    ? "text-amber-600"
+                    ? "text-amber-600 font-semibold"
                     : "text-stone-600 hover:text-stone-900"
                 }`}
               >
@@ -71,10 +73,10 @@ export const Navbar = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] bg-stone-50">
-                <div className="flex flex-col gap-8 mt-12">
-                  <div className="font-serif text-2xl font-semibold text-stone-900">
+                <div className="flex flex-col gap-4 mt-12">
+                  <div className="font-serif text-lg font-semibold text-stone-900">
                     Sheeshmahal
-                    <span className="block text-amber-600 text-lg italic">
+                    <span className="block text-amber-600 text-lg font-semibold">
                       Jewellers
                     </span>
                   </div>
@@ -87,7 +89,7 @@ export const Navbar = () => {
                         data-testid={`mobile-nav-link-${link.name.toLowerCase()}`}
                         className={`uppercase tracking-widest text-sm font-medium py-2 transition-colors duration-300 ${
                           isActive(link.path)
-                            ? "text-amber-600"
+                            ? "text-amber-600 font-semibold"
                             : "text-stone-600 hover:text-stone-900"
                         }`}
                       >

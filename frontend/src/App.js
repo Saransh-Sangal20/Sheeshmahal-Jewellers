@@ -1,6 +1,7 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
+import ScrollToTop from "@/components/ScrollToTop";
 
 // Pages
 import HomePage from "@/pages/HomePage";
@@ -20,6 +21,7 @@ function App() {
   return (
     <div className="App min-h-screen bg-stone-50">
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           {/* Admin Routes (no navbar/footer) */}
           <Route path="/admin/login" element={<AdminLoginPage />} />

@@ -36,10 +36,10 @@ export const HomePage = () => {
   }, []);
 
   const categories = [
-    { name: "Gold", image: "https://images.pexels.com/photos/32780784/pexels-photo-32780784.jpeg" },
-    { name: "Diamond", image: "https://images.unsplash.com/photo-1760081912307-fe4c5cc3aee0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwxfHxkaWFtb25kJTIwcmluZyUyMGx1eHVyeSUyMG1hY3JvJTIwc2hvdHxlbnwwfHx8fDE3Njk1ODYwODZ8MA&ixlib=rb-4.1.0&q=85" },
-    { name: "Silver", image: "https://images.unsplash.com/photo-1653227907877-e097195908fb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBqZXdlbGxlcnklMjBzaG93cm9vbSUyMGludGVyaW9yJTIwbGlnaHRpbmd8ZW58MHx8fHwxNzY5NTg2MDg4fDA&ixlib=rb-4.1.0&q=85" },
-    { name: "Platinum", image: "https://images.unsplash.com/photo-1762019313711-8b5d1e4f7ba4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwyfHxkaWFtb25kJTIwcmluZyUyMGx1eHVyeSUyMG1hY3JvJTIwc2hvdHxlbnwwfHx8fDE3Njk1ODYwODZ8MA&ixlib=rb-4.1.0&q=85" },
+    { name: "Gold", image: "https://images.unsplash.com/photo-1653227907877-e097195908fb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBqZXdlbGxlcnklMjBzaG93cm9vbSUyMGludGVyaW9yJTIwbGlnaHRpbmd8ZW58MHx8fHwxNzY5NTg2MDg4fDA&ixlib=rb-4.1.0&q=85" },
+    { name: "Silver", image: "https://images.unsplash.com/photo-1679156271420-e6c596e9c10a?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+    { name: "Diamond", image: "https://images.unsplash.com/photo-1607703829739-c05b7beddf60?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+    { name: "Platinum", image: "https://plus.unsplash.com/premium_photo-1680181362119-5c9bf196805f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
   ];
 
   return (
@@ -51,9 +51,9 @@ export const HomePage = () => {
           <img
             src={HERO_IMAGE}
             alt="Elegant Indian Bridal Jewellery"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-[center_30%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/80 via-stone-900/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/50 via-stone-900/60 to-stone-900/70" />
         </div>
 
         {/* Content */}
@@ -64,17 +64,15 @@ export const HomePage = () => {
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <span className="uppercase tracking-[0.3em] text-xs text-amber-400 font-medium mb-4 block">
-              Since Generations
+            <span className="uppercase tracking-[0.3em] text-sm text-amber-400 font-bold mb-4 block">
+              Trusted Jewellers in Varanasi
             </span>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-semibold leading-tight mb-6">
               Where Tradition
               <span className="block text-amber-400">Meets Elegance</span>
             </h1>
             <p className="text-stone-300 text-lg mb-8 leading-relaxed max-w-xl">
-              Discover exquisite handcrafted jewellery that celebrates the rich
-              heritage of Varanasi. Each piece tells a story of craftsmanship
-              passed down through generations.
+              Discover Hallmarked Gold, Silver and Diamond Jewellery in Varanasi, designed with timeless elegance and unmatched craftsmanship.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
@@ -90,7 +88,7 @@ export const HomePage = () => {
               <Button
                 asChild
                 variant="outline"
-                className="border-stone-50 text-stone-50 hover:bg-stone-50 hover:text-stone-900 rounded-none px-8 py-6 uppercase tracking-widest text-xs font-bold transition-all duration-300 bg-transparent"
+                className="bg-amber-500 text-stone-50 border-none hover:bg-stone-50 hover:text-stone-900 rounded-none px-8 py-6 uppercase tracking-widest text-xs font-bold transition-all duration-300"
                 data-testid="hero-visit-btn"
               >
                 <Link to="/location">Visit Showroom</Link>
@@ -109,7 +107,7 @@ export const HomePage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="uppercase tracking-[0.3em] text-xs text-amber-600 font-medium mb-4 block">
+            <span className="uppercase tracking-[0.3em] text-sm font-semibold text-amber-600 mb-4 block">
               Our Collections
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-stone-900 font-semibold">
@@ -238,7 +236,7 @@ export const HomePage = () => {
             className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6"
           >
             <div>
-              <span className="uppercase tracking-[0.3em] text-xs text-amber-600 font-medium mb-4 block">
+              <span className="uppercase tracking-[0.3em] text-sm text-amber-600 font-extrabold mb-4 block">
                 Customer Stories
               </span>
               <h2 className="font-serif text-3xl md:text-4xl text-stone-900 font-semibold">
@@ -292,7 +290,8 @@ export const HomePage = () => {
                 className="bg-amber-600 text-white hover:bg-amber-700 rounded-none px-8 py-6 uppercase tracking-widest text-xs font-bold transition-all duration-300"
                 data-testid="cta-location-btn"
               >
-                <Link to="/location">Get Directions</Link>
+                <Link to="https://www.google.com/maps/place/Sheeshmahal+Jewellers/@25.3222549,82.9551871,13z/data=!4m7!3m6!1s0x398e2f04645bedcb:0x839f33c7437a3086!8m2!3d25.3271982!4d83.0032499!15sCgxzaGVlc2ggbWFoYWxaDiIMc2hlZXNoIG1haGFskgENamV3ZWxyeV9zdG9yZeABAA!16s%2Fg%2F11s1w1g192?coh=164777&entry=tt&shorturl=1">
+                Get Directions</Link>
               </Button>
               <Button
                 asChild
