@@ -8,23 +8,35 @@ export const LocationPage = () => {
   return (
     <div className="bg-stone-50 min-h-screen" data-testid="location-page">
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-white border-b border-stone-100">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1721034917345-d17c5405ead0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Sheeshmahal Jewellers showroom in Varanasi"
+            className="w-full h-full object-cover object-[center_50%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/60" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center"
           >
-            <span className="uppercase tracking-[0.3em] text-xs text-amber-600 font-medium mb-4 block">
+            <span className="uppercase tracking-[0.3em] text-sm text-amber-400 font-semibold mb-4 block">
               Find Us
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl text-stone-900 font-semibold mb-4">
-              Our Location
+
+            <h1 className="font-serif text-4xl md:text-5xl text-white font-semibold mb-4">
+              Visit Our Store in <span className="text-amber-500">Varanasi</span>
             </h1>
-            <p className="text-stone-500 text-lg max-w-2xl mx-auto">
-              Visit our showroom in the heart of Varanasi to experience our
-              exquisite collection in person.
+
+            <p className="text-stone-300 text-lg max-w-2xl mx-auto">
+              Located near Rani Sati Mandir — experience Sheeshmahal Jewellers in person and explore our exclusive gold and diamond collection.
             </p>
           </motion.div>
         </div>
@@ -73,13 +85,7 @@ export const LocationPage = () => {
                     <h3 className="font-serif text-lg text-stone-900 font-medium mb-2">
                       Contact
                     </h3>
-                    <a
-                      href="tel:+919839555066"
-                      className="text-stone-700 hover:text-amber-600 transition-colors"
-                      data-testid="location-phone"
-                    >
-                      +91 98395 55066
-                    </a>
+                    +91 98395 55066
                   </div>
                 </div>
               </div>
@@ -95,9 +101,8 @@ export const LocationPage = () => {
                       Opening Hours
                     </h3>
                     <div className="text-stone-700 text-sm space-y-1">
-                      <p>Weekdays: 10:00 AM - 8:00 PM</p>
-                      <p>Saturday: 10:00 AM - 7:30 PM</p>
-                      <p>Sunday: Closed</p>
+                      <p>Weekdays: 10:00 AM - 9:00 PM</p>
+                      <p>Sunday: 10:00 AM - 6:00 PM</p>
                     </div>
                   </div>
                 </div>
@@ -106,7 +111,7 @@ export const LocationPage = () => {
               {/* Get Directions Button */}
               <Button
                 asChild
-                className="bg-stone-900 text-stone-50 hover:bg-stone-800 rounded-none px-8 py-6 uppercase tracking-widest text-xs font-bold w-full"
+                className="bg-stone-900 text-stone-50 hover:bg-amber-500 rounded-none px-8 py-6 uppercase tracking-widest text-xs font-bold w-full"
                 data-testid="get-directions-btn"
               >
                 <a
@@ -143,29 +148,6 @@ export const LocationPage = () => {
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Landmarks Section */}
-      <section className="py-16 md:py-20 bg-white border-t border-stone-100">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h3 className="font-serif text-2xl text-stone-900 font-semibold mb-4">
-              How to Find Us
-            </h3>
-            <p className="text-stone-600 max-w-2xl mx-auto leading-relaxed">
-              We are located near <strong>Rani Sati Mandir</strong> in the Nati
-              Imli area of Bauliabagh, Varanasi. Look for the prominent
-              Sheeshmahal Jewellers signboard. Parking is available nearby. If
-              you need assistance finding us, please call us and we'll be happy
-              to guide you.
-            </p>
-          </motion.div>
         </div>
       </section>
     </div>

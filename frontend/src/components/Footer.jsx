@@ -131,7 +131,7 @@ export const Footer = () => {
             <div className="flex items-start gap-3 text-stone-400 mb-4">
               <MapPin className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
               <p className="text-sm leading-relaxed">
-                Nati Imli, Bauliabagh, near Rani Sati Mandir,
+                Nati Imli, Ramkatora, Near Rani Sati Mandir,
                 <br />
                 Varanasi, Uttar Pradesh 221001
               </p>

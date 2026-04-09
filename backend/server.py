@@ -353,7 +353,7 @@ async def create_review(review: ReviewCreate):
     review_obj = Review(**review.model_dump())
     doc = review_obj.model_dump()
     doc['createdAt'] = doc['createdAt'].isoformat()
-    doc['approved'] = False  # New reviews are NOT approved by default
+    doc['approved'] = True  # New reviews are approved by default
 
     await db.reviews.insert_one(doc)
     return review_obj

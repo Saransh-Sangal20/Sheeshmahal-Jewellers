@@ -39,7 +39,7 @@ export const ContactPage = () => {
     setSubmitting(true);
     try {
       await axios.post(`${API}/reviews`, formData);
-      toast.success("Thank you for your review! It will be published after approval.");
+      toast.success("Thank you for your review! Please Visit Again");
       setFormData({ name: "", rating: 5, comment: "" });
     } catch (error) {
       toast.error("Failed to submit review. Please try again.");
@@ -51,23 +51,35 @@ export const ContactPage = () => {
   return (
     <div className="bg-stone-50 min-h-screen" data-testid="contact-page">
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-white border-b border-stone-100">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=1175&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Jewellery showroom in Varanasi"
+            className="w-full h-full object-cover object-[center_30%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/70 via-stone-900/60 to-stone-900/70" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center"
           >
-            <span className="uppercase tracking-[0.3em] text-xs text-amber-600 font-medium mb-4 block">
+            <span className="uppercase tracking-[0.3em] text-sm text-amber-400 font-semibold mb-4 block">
               Get in Touch
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl text-stone-900 font-semibold mb-4">
-              Contact Us
+
+            <h1 className="font-serif text-4xl md:text-5xl text-white font-semibold mb-4">
+              Visit Our Showroom in <span className="text-amber-500">Varanasi</span>
             </h1>
-            <p className="text-stone-500 text-lg max-w-2xl mx-auto">
-              We'd love to hear from you. Visit our showroom or reach out to us
-              for any inquiries.
+
+            <p className="text-stone-300 text-lg max-w-2xl mx-auto">
+              Connect with Sheeshmahal Jewellers for enquiries, custom designs, or visit us to explore our exclusive gold and diamond jewellery collection.
             </p>
           </motion.div>
         </div>
@@ -84,7 +96,7 @@ export const ContactPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="uppercase tracking-[0.3em] text-xs text-amber-600 font-medium mb-4 block">
+              <span className="uppercase tracking-[0.3em] text-sm text-amber-600 font-semibold mb-4 block">
                 Contact Information
               </span>
               <h2 className="font-serif text-3xl text-stone-900 font-semibold mb-8">
@@ -100,9 +112,9 @@ export const ContactPage = () => {
                   <div>
                     <h3 className="font-medium text-stone-900 mb-1">Location</h3>
                     <p className="text-stone-600 leading-relaxed">
-                      Nati Imli, Bauliabagh,
+                      Nati Imli, Ramkatora,
                       <br />
-                      near Rani Sati Mandir,
+                      Near Rani Sati Mandir,
                       <br />
                       Varanasi, Uttar Pradesh 221001
                     </p>
@@ -125,13 +137,7 @@ export const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="font-medium text-stone-900 mb-1">Phone</h3>
-                    <a
-                      href="tel:+919839555066"
-                      className="text-stone-600 hover:text-amber-600 transition-colors text-lg"
-                      data-testid="contact-phone"
-                    >
                       +91 98395 55066
-                    </a>
                   </div>
                 </div>
 
@@ -145,9 +151,8 @@ export const ContactPage = () => {
                       Opening Hours
                     </h3>
                     <div className="text-stone-600 space-y-1">
-                      <p>Weekdays: 10:00 AM - 8:00 PM</p>
-                      <p>Saturday: 10:00 AM - 7:30 PM</p>
-                      <p>Sunday: Closed</p>
+                      <p>Weekdays: 10:00 AM - 9:00 PM</p>
+                      <p>Sunday: 10:00 AM - 6:00 PM</p>
                     </div>
                   </div>
                 </div>
@@ -157,7 +162,7 @@ export const ContactPage = () => {
               <div className="mt-10">
                 <Button
                   asChild
-                  className="bg-stone-900 text-stone-50 hover:bg-stone-800 rounded-none px-8 py-6 uppercase tracking-widest text-xs font-bold w-full sm:w-auto"
+                  className="bg-stone-900 text-stone-50 hover:bg-amber-500 rounded-none px-8 py-6 uppercase tracking-widest text-xs font-bold w-full sm:w-auto"
                   data-testid="contact-call-btn"
                 >
                   <a href="tel:+919839555066">
@@ -175,7 +180,7 @@ export const ContactPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="uppercase tracking-[0.3em] text-xs text-amber-600 font-medium mb-4 block">
+              <span className="uppercase tracking-[0.3em] text-sm text-amber-600 font-semibold mb-4 block">
                 Share Your Experience
               </span>
               <h2 className="font-serif text-3xl text-stone-900 font-semibold mb-8">
@@ -262,10 +267,6 @@ export const ContactPage = () => {
                   )}
                 </Button>
               </form>
-
-              <p className="text-stone-500 text-sm mt-4">
-                Your review will be published after approval by our team.
-              </p>
             </motion.div>
           </div>
         </div>

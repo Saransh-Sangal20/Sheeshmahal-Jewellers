@@ -291,7 +291,7 @@ export const HomePage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 asChild
-                className="bg-amber-600 text-white hover:bg-amber-700 rounded-none px-8 py-6 uppercase tracking-widest text-xs font-bold transition-all duration-300"
+                className="bg-amber-600 text-white hover:bg-stone-50 hover:text-stone-900 rounded-none px-8 py-6 uppercase tracking-widest text-xs font-bold transition-all duration-300"
                 data-testid="cta-location-btn"
               >
                 <Link to="https://www.google.com/maps/place/Sheeshmahal+Jewellers/@25.3222549,82.9551871,13z/data=!4m7!3m6!1s0x398e2f04645bedcb:0x839f33c7437a3086!8m2!3d25.3271982!4d83.0032499!15sCgxzaGVlc2ggbWFoYWxaDiIMc2hlZXNoIG1haGFskgENamV3ZWxyeV9zdG9yZeABAA!16s%2Fg%2F11s1w1g192?coh=164777&entry=tt&shorturl=1">

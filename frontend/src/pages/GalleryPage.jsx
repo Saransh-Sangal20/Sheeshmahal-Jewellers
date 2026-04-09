@@ -66,7 +66,7 @@ export const GalleryPage = () => {
             alt="Luxury Jewellery Showroom"
             className="w-full h-full object-cover object-[center_40%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/60 via-stone-900/50 to-stone-900/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/70 via-stone-900/60 to-stone-900/70" />
         </div>
 
         {/* Content */}

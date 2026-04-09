@@ -8,26 +8,26 @@ const SHOWROOM_IMAGE = "https://images.unsplash.com/photo-1754573433744-bf2b79d0
 export const AboutPage = () => {
   const values = [
     {
-      icon: Gem,
-      title: "Quality Craftsmanship",
+      icon: Award,
+      title: "Hallmarked Gold Jewellery",
       description:
-        "Every piece is handcrafted by master artisans using traditional techniques passed down through generations.",
+        "We offer BIS hallmarked gold jewellery ensuring purity, authenticity, and long-term value.",
     },
     {
-      icon: Award,
-      title: "Certified Purity",
+      icon: Gem,
+      title: "100% Gold Buyback Guarantee",
       description:
-        "All our gold jewellery is BIS hallmarked, and diamonds come with certified authenticity.",
+        "Get complete value assurance with our trusted gold buyback policy.",
     },
     {
       icon: Heart,
-      title: "Customer Trust",
+      title: "Easy Exchange and Upgrade",
       description:
-        "Generations of families have trusted us for their most precious moments and celebrations.",
+        "Exchange old jewellery and upgrade to new designs effortlessly.",
     },
     {
       icon: Users,
-      title: "Personalized Service",
+      title: "Custom Jewellery Designs",
       description:
         "Our expert staff provides personalized guidance to help you find the perfect piece.",
     },
@@ -169,11 +169,7 @@ export const AboutPage = () => {
               Our Promise to You
             </h2>
             <p className="text-stone-400 text-lg max-w-3xl mx-auto leading-relaxed">
-              When you choose Sheeshmahal Jewellers, you're not just buying
-              jewellery — you're investing in a legacy. We promise purity,
-              authenticity, and service that goes beyond the transaction. Your
-              trust is our most treasured possession, and we work every day to
-              uphold it.
+              At Sheeshmahal Jewellers, a trusted name for gold and diamond jewellery in Varanasi, we promise purity, authenticity, and exceptional craftsmanship. Every piece reflects timeless elegance, blending tradition with lasting value.
             </p>
           </motion.div>
         </div>
