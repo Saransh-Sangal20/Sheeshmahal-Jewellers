@@ -65,9 +65,9 @@ export const LocationPage = () => {
                       Address
                     </h3>
                     <p className="text-stone-700 text-sm leading-relaxed">
-                      Nati Imli, Bauliabagh,
+                      Nati Imli, Ramkatora,
                       <br />
-                      near Rani Sati Mandir,
+                      Near Rani Sati Mandir,
                       <br />
                       Varanasi, Uttar Pradesh 221001
                     </p>
