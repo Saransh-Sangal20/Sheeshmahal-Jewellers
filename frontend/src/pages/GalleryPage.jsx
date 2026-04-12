@@ -1,41 +1,30 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import axios from "axios";
 import JewelleryCard from "@/components/JewelleryCard";
 import { Button } from "@/components/ui/button";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
 
 export const GalleryPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [jewellery, setJewellery] = useState([]);
+  const [allJewellery, setAllJewellery] = useState([]);
   const [categories, setCategories] = useState(["All"]);
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState(
     searchParams.get("category") || "All"
   );
 
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const res = await axios.get(`${API}/jewellery/categories`);
-        setCategories(res.data.categories);
-      } catch (error) {
-        console.error("Error fetching categories:", error);
-      }
-    };
-    fetchCategories();
-  }, []);
-
+  // Fetch all jewellery once on mount
   useEffect(() => {
     const fetchJewellery = async () => {
-      setLoading(true);
       try {
-        const params = activeCategory !== "All" ? `?category=${activeCategory}` : "";
-        const res = await axios.get(`${API}/jewellery${params}`);
-        setJewellery(res.data);
+        const res = await fetch(`${process.env.PUBLIC_URL}/data/jewellery.json`);
+        const data = await res.json();
+        setAllJewellery(data);
+
+        // Extract unique categories
+        const uniqueCategories = [...new Set(data.map(item => item.category))];
+        setCategories(["All", ...uniqueCategories]);
       } catch (error) {
         console.error("Error fetching jewellery:", error);
       } finally {
@@ -43,7 +32,16 @@ export const GalleryPage = () => {
       }
     };
     fetchJewellery();
-  }, [activeCategory]);
+  }, []);
+
+  // Filter jewellery when category changes
+  useEffect(() => {
+    if (activeCategory === "All") {
+      setJewellery(allJewellery);
+    } else {
+      setJewellery(allJewellery.filter(item => item.category === activeCategory));
+    }
+  }, [activeCategory, allJewellery]);
 
   const handleCategoryChange = (category) => {
     setActiveCategory(category);

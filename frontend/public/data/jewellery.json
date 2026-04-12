@@ -1,0 +1,50 @@
+[
+  {
+    "id": "j1",
+    "name": "Royal Gold Necklace",
+    "category": "Gold",
+    "description": "Exquisite 22 karat gold necklace with traditional Varanasi craftsmanship. Perfect for weddings and special occasions.",
+    "imageUrl": "https://plus.unsplash.com/premium_photo-1724762183134-c17cf5f5bed2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "createdAt": "2025-04-12T00:00:00.000Z"
+  },
+  {
+    "id": "j2",
+    "name": "Diamond Solitaire Ring",
+    "category": "Diamond",
+    "description": "Elegant diamond solitaire ring featuring a brilliant cut diamond set in 18k white gold.",
+    "imageUrl": "https://images.unsplash.com/photo-1607703829739-c05b7beddf60?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "createdAt": "2025-04-11T00:00:00.000Z"
+  },
+  {
+    "id": "j3",
+    "name": "Traditional Silver Anklet",
+    "category": "Silver",
+    "description": "Handcrafted silver anklet with intricate jhankar bells. A beautiful piece of Indian heritage.",
+    "imageUrl": "https://imgs.search.brave.com/GZi-9JrlfRpn8kXUE0JCJecmltT4wsgco4Np1_37rqw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2JlLzc0/L2MyL2JlNzRjMmY3/MjY3NzZiYzZkOWQ1/MzljYTQ4ZjE4ZjQ3/LmpwZw",
+    "createdAt": "2025-04-10T00:00:00.000Z"
+  },
+  {
+    "id": "j4",
+    "name": "Sapphire Platinum Ring",
+    "category": "Platinum",
+    "description": "Stunning blue sapphire set in premium platinum. A symbol of royalty and elegance.",
+    "imageUrl": "https://images.unsplash.com/photo-1762019313711-8b5d1e4f7ba4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwyfHxkaWFtb25kJTIwcmluZyUyMGx1eHVyeSUyMG1hY3JvJTIwc2hvdHxlbnwwfHx8fDE3Njk1ODYwODZ8MA&ixlib=rb-4.1.0&q=85",
+    "createdAt": "2025-04-09T00:00:00.000Z"
+  },
+  {
+    "id": "j5",
+    "name": "Bridal Gold Set",
+    "category": "Gold",
+    "description": "Complete bridal jewellery set including necklace, earrings, and maang tikka in pure gold.",
+    "imageUrl": "https://images.unsplash.com/photo-1737515046830-1680d82e043c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwzfHxpbmRpYW4lMjBicmlkYWwlMjBqZXdlbGxlcnklMjBzZXQlMjBtb2RlbHxlbnwwfHx8fDE3Njk1ODYwOTB8MA&ixlib=rb-4.1.0&q=85",
+    "createdAt": "2025-04-08T00:00:00.000Z"
+  },
+  {
+    "id": "j6",
+    "name": "Temple Gold Earrings",
+    "category": "Gold",
+    "description": "Traditional temple-style gold earrings with detailed engravings. Handcrafted by master artisans.",
+    "imageUrl": "https://images.unsplash.com/photo-1651160670627-2896ddf7822f?q=80&w=768&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "createdAt": "2025-04-07T00:00:00.000Z"
+  }
+]

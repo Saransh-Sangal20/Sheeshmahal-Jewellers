@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Star, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import axios from "axios";
 import ReviewCard from "@/components/ReviewCard";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
 
 const HERO_IMAGE = "https://images.unsplash.com/photo-1737515046830-1680d82e043c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwzfHxpbmRpYW4lMjBicmlkYWwlMjBqZXdlbGxlcnklMjBzZXQlMjBtb2RlbHxlbnwwfHx8fDE3Njk1ODYwOTB8MA&ixlib=rb-4.1.0&q=85";
 
@@ -20,11 +16,15 @@ export const HomePage = () => {
     const fetchData = async () => {
       try {
         const [jewelleryRes, reviewsRes] = await Promise.all([
-          axios.get(`${API}/jewellery`),
-          axios.get(`${API}/reviews`),
+          fetch(`${process.env.PUBLIC_URL}/data/jewellery.json`).then(r => r.json()),
+          fetch(`${process.env.PUBLIC_URL}/data/reviews.json`).then(r => r.json()),
         ]);
-        setJewellery(jewelleryRes.data.slice(0, 4));
-        setReviews(reviewsRes.data);
+        setJewellery(jewelleryRes.slice(0, 4));
+
+        // Merge JSON reviews with localStorage reviews
+        const localReviews = JSON.parse(localStorage.getItem("userReviews") || "[]");
+        const allReviews = [...localReviews, ...reviewsRes].filter(r => r.approved);
+        setReviews(allReviews);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {

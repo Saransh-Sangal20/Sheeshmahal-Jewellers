@@ -6,10 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
-import axios from "axios";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
 
 export const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +24,7 @@ export const ContactPage = () => {
     setFormData((prev) => ({ ...prev, rating }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
     if (!formData.name.trim() || !formData.comment.trim()) {
@@ -37,15 +33,24 @@ export const ContactPage = () => {
     }
 
     setSubmitting(true);
-    try {
-      await axios.post(`${API}/reviews`, formData);
-      toast.success("Thank you for your review! Please Visit Again");
-      setFormData({ name: "", rating: 5, comment: "" });
-    } catch (error) {
-      toast.error("Failed to submit review. Please try again.");
-    } finally {
-      setSubmitting(false);
-    }
+
+    // Save review to localStorage
+    const newReview = {
+      id: `user-${Date.now()}`,
+      name: formData.name.trim(),
+      rating: formData.rating,
+      comment: formData.comment.trim(),
+      createdAt: new Date().toISOString(),
+      approved: true,
+    };
+
+    const existingReviews = JSON.parse(localStorage.getItem("userReviews") || "[]");
+    existingReviews.unshift(newReview);
+    localStorage.setItem("userReviews", JSON.stringify(existingReviews));
+
+    toast.success("Thank you for your review! Please Visit Again");
+    setFormData({ name: "", rating: 5, comment: "" });
+    setSubmitting(false);
   };
 
   return (
