@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import Seo from "@/components/Seo";
 
 export const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -55,15 +56,28 @@ export const ContactPage = () => {
 
   return (
     <div className="bg-stone-50 min-h-screen" data-testid="contact-page">
+      <Seo
+        title="Contact Sheeshmahal Jewellers in Varanasi"
+        description="Call or visit Sheeshmahal Jewellers near Rani Sati Mandir in Varanasi for gold jewellery, diamond jewellery, and custom designs."
+        keywords={[
+          "contact Sheeshmahal Jewellers",
+          "jewellery near Rani Sati Mandir",
+          "gold jewellery Varanasi",
+          "diamond jewellery Varanasi",
+        ]}
+      />
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden" aria-labelledby="contact-hero-title">
 
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=1175&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Jewellery showroom in Varanasi"
+            alt="Elegant jewellery showroom in Varanasi near Rani Sati Mandir"
             className="w-full h-full object-cover object-[center_30%]"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-stone-900/70 via-stone-900/60 to-stone-900/70" />
         </div>
@@ -79,7 +93,7 @@ export const ContactPage = () => {
               Get in Touch
             </span>
 
-            <h1 className="font-serif text-4xl md:text-5xl text-white font-semibold mb-4">
+            <h1 id="contact-hero-title" className="font-serif text-4xl md:text-5xl text-white font-semibold mb-4">
               Visit Our Showroom in <span className="text-amber-500">Varanasi</span>
             </h1>
 

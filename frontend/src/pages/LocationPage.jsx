@@ -1,21 +1,35 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Seo from "@/components/Seo";
 
 const GOOGLE_MAPS_EMBED = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.4567!2d83.0032499!3d25.3271982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2f04645bedcb%3A0x839f33c7437a3086!2sSheeshmahal%20Jewellers!5e0!3m2!1sen!2sin!4v1704067200000!5m2!1sen!2sin";
 
 export const LocationPage = () => {
   return (
     <div className="bg-stone-50 min-h-screen" data-testid="location-page">
+      <Seo
+        title="Sheeshmahal Jewellers Location in Varanasi"
+        description="Find Sheeshmahal Jewellers near Rani Sati Mandir in Varanasi with store hours, phone number, and directions for gold and diamond jewellery shopping."
+        keywords={[
+          "Sheeshmahal Jewellers location",
+          "jewellery near Rani Sati Mandir",
+          "gold jewellery Varanasi",
+          "diamond jewellery Varanasi",
+        ]}
+      />
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden" aria-labelledby="location-hero-title">
 
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1721034917345-d17c5405ead0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Sheeshmahal Jewellers showroom in Varanasi"
+            alt="Sheeshmahal Jewellers showroom in Varanasi near Rani Sati Mandir"
             className="w-full h-full object-cover object-[center_50%]"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/60" />
         </div>
@@ -31,7 +45,7 @@ export const LocationPage = () => {
               Find Us
             </span>
 
-            <h1 className="font-serif text-4xl md:text-5xl text-white font-semibold mb-4">
+            <h1 id="location-hero-title" className="font-serif text-4xl md:text-5xl text-white font-semibold mb-4">
               Visit Our Store in <span className="text-amber-500">Varanasi</span>
             </h1>
 

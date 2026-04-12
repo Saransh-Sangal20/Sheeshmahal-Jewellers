@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import JewelleryCard from "@/components/JewelleryCard";
 import { Button } from "@/components/ui/button";
+import Seo from "@/components/Seo";
 
 export const GalleryPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -54,15 +55,28 @@ export const GalleryPage = () => {
 
   return (
     <div className="bg-stone-50 min-h-screen" data-testid="gallery-page">
+      <Seo
+        title="Jewellery Gallery in Varanasi"
+        description="Browse gold jewellery, diamond jewellery, silver pieces, and bridal collections from Sheeshmahal Jewellers in Varanasi."
+        keywords={[
+          "jewellery gallery Varanasi",
+          "gold jewellery Varanasi",
+          "diamond jewellery Varanasi",
+          "Sheeshmahal Jewellers",
+        ]}
+      />
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden" aria-labelledby="gallery-hero-title">
 
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1600"
-            alt="Luxury Jewellery Showroom"
+            alt="Luxury jewellery showroom display in Varanasi"
             className="w-full h-full object-cover object-[center_40%]"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-stone-900/70 via-stone-900/60 to-stone-900/70" />
         </div>
@@ -78,7 +92,7 @@ export const GalleryPage = () => {
               Our Collection
             </span>
 
-            <h1 className="font-serif text-4xl md:text-5xl text-white font-semibold mb-4">
+            <h1 id="gallery-hero-title" className="font-serif text-4xl md:text-5xl text-white font-semibold mb-4">
               Jewellery Gallery
             </h1>
 

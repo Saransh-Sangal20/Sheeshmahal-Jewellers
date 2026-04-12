@@ -19,7 +19,7 @@ export const ReviewCard = ({ review }) => {
   };
 
   return (
-    <div
+    <article
       className="bg-white p-6 border border-stone-100 min-w-[320px] max-w-[320px] flex-shrink-0"
       data-testid="review-card"
     >
@@ -35,7 +35,7 @@ export const ReviewCard = ({ review }) => {
       <p className="text-stone-600 text-sm leading-relaxed line-clamp-4">
         "{review.comment}"
       </p>
-    </div>
+    </article>
   );
 };
 
