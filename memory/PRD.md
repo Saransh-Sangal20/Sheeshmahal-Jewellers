@@ -17,6 +17,7 @@ Remove backend from the Sheeshmahal Jewellers website. Make it completely fronte
 - Updated `GalleryPage.jsx` - fetches from local JSON, client-side category filtering
 - Updated `ContactPage.jsx` - review form saves to localStorage instead of API
 - Admin pages (AdminLoginPage, AdminDashboard, ProtectedRoute) are no longer routed but files still exist
+- **WhatsApp Chat Widget** - floating green button (bottom-right) with official WhatsApp icon, "Chat with us!" tooltip on hover, opens WhatsApp chat to +91 98395 55066, visible on all pages with pulse animation
 
 ## Data Files
 - `/frontend/public/data/jewellery.json` - Jewellery items (add/edit here to update gallery)
@@ -30,7 +31,10 @@ Remove backend from the Sheeshmahal Jewellers website. Make it completely fronte
 - `/contact` - Contact info + review form
 - `/location` - Google Maps embed + directions
 
+## Components
+- `WhatsAppWidget.jsx` - Floating WhatsApp chat button (all pages)
+
 ## Backlog
-- P0: None (all core features working)
 - P1: Delete unused admin files (AdminLoginPage.jsx, AdminDashboard.jsx, ProtectedRoute.jsx)
-- P2: Consider adding more jewellery items and categories to JSON
+- P2: Add more jewellery categories (Kundan, Polki, Temple, Bridal Sets) when needed
+- P2: Add more jewellery items to JSON as collection grows
