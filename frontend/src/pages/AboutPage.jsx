@@ -166,7 +166,7 @@ export const AboutPage = () => {
             viewport={{ once: true }}
           >
             <h2 className="font-serif text-3xl md:text-4xl text-white font-semibold mb-6">
-              Our Promise to You
+              Our <span className="text-amber-500">Promise</span> to You
             </h2>
             <p className="text-stone-400 text-lg max-w-3xl mx-auto leading-relaxed">
               At Sheeshmahal Jewellers, a trusted name for gold and diamond jewellery in Varanasi, we promise purity, authenticity, and exceptional craftsmanship. Every piece reflects timeless elegance, blending tradition with lasting value.

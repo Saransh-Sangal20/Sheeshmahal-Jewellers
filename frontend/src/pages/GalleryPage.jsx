@@ -143,12 +143,12 @@ export const GalleryPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20 bg-white border-t border-stone-100">
+      <section className="py-16 md:py-20 bg-stone-900 border-t border-stone-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
-          <h3 className="font-serif text-2xl md:text-3xl text-stone-900 font-semibold mb-4">
-            Let Us Help You Find Your Perfect Jewellery
+          <h3 className="font-serif text-2xl md:text-3xl text-stone-50 font-semibold mb-4">
+            Let Us Help You Find Your <span className="text-amber-500">Perfect Jewellery</span>
           </h3>
-          <p className="text-stone-500 mb-6 max-w-lg mx-auto">
+          <p className="text-stone-300 mb-6 max-w-lg mx-auto">
             Visit our showroom to explore our complete collection or call us for
             custom jewellery designs.
           </p>
