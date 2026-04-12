@@ -31,8 +31,9 @@ export const Navbar = () => {
             to="/"
             className="flex items-center gap-2"
             data-testid="navbar-logo"
+            aria-label="Sheeshmahal Jewellers home"
           >
-            <img src={logo} alt="sheeshmahal-jewellers-logo" className="w-35 h-20"/>
+            <img src={logo} alt="Sheeshmahal Jewellers logo - best jewellery shop in Varanasi" className="w-35 h-20" />
             <span className="font-serif text-2xl md:text-3xl font-semibold text-stone-900 tracking-tight">
               Sheeshmahal
             </span>

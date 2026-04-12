@@ -1,14 +1,15 @@
 import "@/App.css";
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 import ScrollToTop from "@/components/ScrollToTop";
 
 // Pages
-import HomePage from "@/pages/HomePage";
-import GalleryPage from "@/pages/GalleryPage";
-import AboutPage from "@/pages/AboutPage";
-import ContactPage from "@/pages/ContactPage";
-import LocationPage from "@/pages/LocationPage";
+const HomePage = lazy(() => import("@/pages/HomePage"));
+const GalleryPage = lazy(() => import("@/pages/GalleryPage"));
+const AboutPage = lazy(() => import("@/pages/AboutPage"));
+const ContactPage = lazy(() => import("@/pages/ContactPage"));
+const LocationPage = lazy(() => import("@/pages/LocationPage"));
 
 // Components
 import Navbar from "@/components/Navbar";
@@ -20,27 +21,25 @@ function App() {
     <div className="App min-h-screen bg-stone-50">
       <BrowserRouter>
         <ScrollToTop />
-        <Routes>
-          {/* Public Routes */}
-          <Route
-            path="/*"
-            element={
-              <>
-                <Navbar />
-                <main>
-                  <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/gallery" element={<GalleryPage />} />
-                    <Route path="/about" element={<AboutPage />} />
-                    <Route path="/contact" element={<ContactPage />} />
-                    <Route path="/location" element={<LocationPage />} />
-                  </Routes>
-                </main>
-                <Footer />
-              </>
+        <Navbar />
+        <main>
+          <Suspense
+            fallback={
+              <div className="min-h-[40vh] flex items-center justify-center text-stone-500">
+                Loading page...
+              </div>
             }
-          />
-        </Routes>
+          >
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/gallery" element={<GalleryPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/location" element={<LocationPage />} />
+            </Routes>
+          </Suspense>
+        </main>
+        <Footer />
         <WhatsAppWidget />
         <Toaster position="top-right" />
       </BrowserRouter>
