@@ -18,6 +18,7 @@ Remove backend from the Sheeshmahal Jewellers website. Make it completely fronte
 - Updated `ContactPage.jsx` - review form saves to localStorage instead of API
 - Admin pages (AdminLoginPage, AdminDashboard, ProtectedRoute) are no longer routed but files still exist
 - **WhatsApp Chat Widget** - floating green button (bottom-right) with official WhatsApp icon, "Chat with us!" tooltip on hover, opens WhatsApp chat to +91 98395 55066, visible on all pages with pulse animation
+- **README.md** - completely rewritten to reflect current frontend-only architecture, data management, deployment guide
 
 ## Data Files
 - `/frontend/public/data/jewellery.json` - Jewellery items (add/edit here to update gallery)

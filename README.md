@@ -1,6 +1,6 @@
 # Sheeshmahal Jewellers - Website
 
-A modern, minimal jewellery showroom website for **Sheeshmahal Jewellers**, a physical store located in Varanasi, India. Built to showcase the store's jewellery collection, provide store information, and manage content through an admin panel.
+A modern, elegant jewellery showroom website for **Sheeshmahal Jewellers**, a trusted jewellery store in Varanasi, India. Built as a fully static frontend application — no backend or database required.
 
 ---
 
@@ -8,13 +8,11 @@ A modern, minimal jewellery showroom website for **Sheeshmahal Jewellers**, a ph
 
 | Page | Route | Description |
 |------|-------|-------------|
-| Home | `/` | Hero banner, shop by category, featured pieces, customer reviews, CTA |
+| Home | `/` | Hero banner, shop by category, featured pieces, customer reviews marquee, CTA |
 | Gallery | `/gallery` | Full jewellery listing with category filters (Gold, Silver, Diamond, Platinum) |
 | About | `/about` | Store story, values, and promise section |
 | Contact | `/contact` | Store address, phone, hours + customer review submission form |
 | Location | `/location` | Google Maps embed with directions and landmark info |
-| Admin Login | `/admin/login` | Secret admin login page (JWT authentication) |
-| Admin Dashboard | `/admin/dashboard` | Manage jewellery items (CRUD) and moderate customer reviews |
 
 ---
 
@@ -22,10 +20,13 @@ A modern, minimal jewellery showroom website for **Sheeshmahal Jewellers**, a ph
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | React, Tailwind CSS, shadcn/ui, Framer Motion, Lucide React |
-| Backend | FastAPI (Python), Motor (async MongoDB driver) |
-| Database | MongoDB |
-| Auth | JWT (admin only) — PyJWT + bcrypt |
+| Framework | React (Create React App + CRACO) |
+| Styling | Tailwind CSS, shadcn/ui |
+| Animations | Framer Motion |
+| Icons | Lucide React |
+| Data | Static JSON files + localStorage |
+
+> **No backend, no database, no server** — the entire site runs as a static frontend.
 
 ---
 
@@ -33,147 +34,122 @@ A modern, minimal jewellery showroom website for **Sheeshmahal Jewellers**, a ph
 
 ```
 /app
-├── backend/
-│   ├── .env                  # MongoDB URL, DB name, JWT secret, CORS
-│   ├── server.py             # All API routes, models, auth, seed data (fully commented)
-│   ├── requirements.txt      # Python dependencies
-│   └── tests/
-│       └── test_api.py       # Backend API tests (pytest)
-│
 ├── frontend/
-│   ├── .env                  # Backend URL for API calls
-│   ├── package.json          # Node dependencies
+│   ├── package.json
+│   ├── tailwind.config.js
+│   ├── craco.config.js
 │   └── src/
-│       ├── App.js            # React Router setup
-│       ├── App.css           # Custom CSS (hover effects, animations)
-│       ├── index.css          # Tailwind config, fonts, CSS variables, scrollbar
+│       ├── App.js                  # React Router setup
+│       ├── App.css                 # Custom CSS (hover effects, WhatsApp pulse animation)
+│       ├── index.css               # Tailwind config, fonts, CSS variables
+│       ├── assets/
+│       │   ├── logo.png            # Sheeshmahal Jewellers logo
+│       │   ├── about.png           # About page hero image
+│       │   └── about2.png          # About page showroom image
 │       ├── components/
-│       │   ├── Navbar.jsx         # Sticky nav with mobile hamburger menu
-│       │   ├── Footer.jsx         # "Why shop with us", social links, contact info
-│       │   ├── ProtectedRoute.jsx # Verifies JWT before allowing admin access
-│       │   ├── ReviewCard.jsx     # Individual review card (used in marquee)
-│       │   └── JewelleryCard.jsx  # Individual jewellery card (used in gallery)
+│       │   ├── Navbar.jsx          # Sticky nav with mobile hamburger menu
+│       │   ├── Footer.jsx          # "Why shop with us", social links, contact info
+│       │   ├── ReviewCard.jsx      # Individual review card (used in homepage marquee)
+│       │   ├── JewelleryCard.jsx   # Individual jewellery card (used in gallery grid)
+│       │   ├── WhatsAppWidget.jsx  # Floating WhatsApp chat button (all pages)
+│       │   └── ScrollToTop.js      # Scrolls to top on route change
 │       ├── pages/
-│       │   ├── HomePage.jsx       # Hero, categories, featured, reviews, CTA
-│       │   ├── GalleryPage.jsx    # Jewellery grid with category filter
-│       │   ├── AboutPage.jsx      # Story, values, promise
-│       │   ├── ContactPage.jsx    # Contact info + review submission form
-│       │   ├── LocationPage.jsx   # Google Maps iframe + directions
-│       │   ├── AdminLoginPage.jsx # Admin email/password login
-│       │   └── AdminDashboard.jsx # Tabs: jewellery CRUD + review moderation
-│       └── components/ui/         # shadcn/ui components (button, input, dialog, etc.)
+│       │   ├── HomePage.jsx        # Hero, categories, featured, reviews, CTA
+│       │   ├── GalleryPage.jsx     # Jewellery grid with category filter
+│       │   ├── AboutPage.jsx       # Story, values, promise
+│       │   ├── ContactPage.jsx     # Contact info + review submission form
+│       │   └── LocationPage.jsx    # Google Maps iframe + directions
+│       └── components/ui/          # shadcn/ui components (button, input, dialog, etc.)
 │
-└── memory/
-    ├── PRD.md                # Product requirements document
-    └── test_credentials.md   # Admin login credentials for testing
+│   └── public/
+│       └── data/
+│           ├── jewellery.json      # All jewellery items (edit this to update gallery)
+│           └── reviews.json        # Base customer reviews (edit this to add permanent reviews)
 ```
 
 ---
 
-## API Endpoints
+## Data Management
 
-### Public (no auth required)
+Since there's no backend or database, all data lives in **JSON files** and **localStorage**.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/api/` | Health check |
-| `GET` | `/api/jewellery` | List all jewellery (optional `?category=Gold`) |
-| `GET` | `/api/jewellery/categories` | Get all categories |
-| `GET` | `/api/jewellery/{item_id}` | Get single jewellery item |
-| `GET` | `/api/reviews` | Get approved reviews only |
-| `POST` | `/api/reviews` | Submit a review (pending admin approval) |
+### Jewellery Items — `public/data/jewellery.json`
 
-### Admin (JWT token required in `Authorization: Bearer <token>` header)
+To add, edit, or remove jewellery items, simply modify this file:
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/api/admin/login` | Login, returns JWT token |
-| `GET` | `/api/admin/verify` | Verify if token is valid |
-| `POST` | `/api/jewellery` | Create new jewellery item |
-| `PUT` | `/api/jewellery/{item_id}` | Update jewellery item |
-| `DELETE` | `/api/jewellery/{item_id}` | Delete jewellery item |
-| `GET` | `/api/admin/reviews` | Get all reviews (including pending) |
-| `PUT` | `/api/admin/reviews/{review_id}?approved=true` | Approve or reject a review |
-| `DELETE` | `/api/admin/reviews/{review_id}` | Delete a review |
-
----
-
-## Database Collections
-
-### `admins`
 ```json
 {
-  "id": "uuid",
-  "email": "admin@jewellery.com",
-  "password": "$2b$12$...",
-  "name": "Admin",
-  "createdAt": "2026-01-28T07:52:47.513511+00:00"
-}
-```
-
-### `jewellery`
-```json
-{
-  "id": "uuid",
+  "id": "j1",
   "name": "Royal Gold Necklace",
   "category": "Gold",
-  "description": "Exquisite 22 karat gold necklace...",
-  "imageUrl": "https://images.pexels.com/...",
-  "createdAt": "2026-01-28T07:52:47.513511+00:00"
+  "description": "Exquisite 22 karat gold necklace with traditional Varanasi craftsmanship.",
+  "imageUrl": "https://example.com/image.jpg",
+  "createdAt": "2025-04-12T00:00:00.000Z"
 }
 ```
 
-### `reviews`
+| Field | Description |
+|-------|-------------|
+| `id` | Unique identifier (any string, must be unique) |
+| `name` | Display name of the jewellery piece |
+| `category` | Category for filtering — `Gold`, `Silver`, `Diamond`, or `Platinum` |
+| `description` | Short description shown on cards |
+| `imageUrl` | Direct URL to the jewellery image |
+| `createdAt` | Date string (used for ordering) |
+
+> **Adding a new category?** Just use a new category name in any item — the gallery filter will automatically pick it up.
+
+### Customer Reviews — `public/data/reviews.json`
+
+Permanent reviews that always show on the homepage. Edit this file to add or remove them:
+
 ```json
 {
-  "id": "uuid",
+  "id": "r1",
   "name": "Priya Sharma",
   "rating": 5,
-  "comment": "Absolutely stunning collection!...",
-  "approved": true,
-  "createdAt": "2026-01-28T07:52:47.513511+00:00"
+  "comment": "Absolutely stunning collection!",
+  "createdAt": "2025-04-12T00:00:00.000Z",
+  "approved": true
 }
 ```
 
----
+### User-Submitted Reviews — `localStorage`
 
-## Seed Data
+When visitors submit a review through the Contact page form:
+- The review is saved to `localStorage` under the key `userReviews`
+- It immediately appears in the homepage reviews marquee alongside the JSON reviews
+- These reviews persist in the visitor's browser but are not shared across devices
 
-On first server start (when collections are empty), the app automatically creates:
-
-- **1 Admin account** — `admin@jewellery.com` / `Admin@123`
-- **6 Jewellery items** — Gold (3), Diamond (1), Silver (1), Platinum (1)
-- **4 Customer reviews** — All pre-approved with 4-5 star ratings
-
-Seed data **never overwrites** existing data. It only runs when a collection is completely empty.
+> To make a user-submitted review permanent, copy it from the browser's localStorage into `reviews.json`.
 
 ---
 
-## Environment Variables
+## Features
 
-### Backend (`/app/backend/.env`)
-| Variable | Description |
-|----------|-------------|
-| `MONGO_URL` | MongoDB connection string |
-| `DB_NAME` | Database name |
-| `JWT_SECRET` | Secret key for signing JWT tokens |
-| `CORS_ORIGINS` | Allowed origins for CORS (default: `*`) |
+### WhatsApp Chat Widget
+A floating green WhatsApp button appears on every page (bottom-right corner):
+- Shows **"Chat with us!"** tooltip on hover
+- Opens WhatsApp chat to **+91 98395 55066** with a pre-filled message
+- Includes a pulse animation to draw attention
 
-### Frontend (`/app/frontend/.env`)
-| Variable | Description |
-|----------|-------------|
-| `REACT_APP_BACKEND_URL` | Backend API base URL (used for all API calls) |
+### Review Form
+The Contact page includes a review form where customers can:
+- Enter their name
+- Select a 1-5 star rating
+- Write a review comment
+- Submit — the review is saved locally and appears on the homepage
 
----
+### Gallery Filters
+The Gallery page supports filtering by category:
+- **All** — shows every item
+- **Gold**, **Silver**, **Diamond**, **Platinum** — filters by category
+- Categories are extracted automatically from the jewellery data
 
-## Admin Panel
-
-Access the admin panel at `/admin/login` (not linked from the public site).
-
-**Features:**
-- **Jewellery Tab** — Add, edit, delete jewellery items with name, category, description, and image URL
-- **Reviews Tab** — View all reviews, approve/reject pending reviews, delete reviews
-- **Logout** — Clears session and redirects to login
+### Responsive Design
+- Desktop navigation with category links
+- Mobile hamburger menu with slide-out drawer
+- All pages are fully responsive
 
 ---
 
@@ -183,8 +159,7 @@ Access the admin panel at `/admin/login` (not linked from the public site).
 - **Fonts:** Playfair Display (serif headings) + Manrope (sans-serif body)
 - **Animations:** Framer Motion for page transitions and scroll reveals
 - **Icons:** Lucide React
-- **Components:** shadcn/ui (buttons, inputs, dialogs, tabs, sheets, selects)
-- **Responsive:** Mobile-first with hamburger menu navigation
+- **Components:** shadcn/ui (buttons, inputs, dialogs, tabs, sheets)
 
 ---
 
@@ -192,11 +167,10 @@ Access the admin panel at `/admin/login` (not linked from the public site).
 
 ### Prerequisites
 
-Make sure you have the following installed on your machine:
+- **Node.js 18+** — [Download](https://nodejs.org/)
+- **Yarn** — `npm install -g yarn`
 
-- **Python 3.10+** — [Download](https://www.python.org/downloads/)
-- **Node.js 18+** and **Yarn** — [Download Node](https://nodejs.org/) / Install Yarn: `npm install -g yarn`
-- **MongoDB 6+** — [Download](https://www.mongodb.com/try/download/community) or use [MongoDB Atlas](https://www.mongodb.com/atlas) (cloud)
+> No Python, MongoDB, or any backend setup required.
 
 ### 1. Clone the Repository
 
@@ -205,108 +179,28 @@ git clone <your-repo-url>
 cd sheeshmahal-jewellers
 ```
 
-### 2. Backend Setup
+### 2. Install Dependencies
 
 ```bash
-# Navigate to backend folder
-cd backend
-
-# Create a Python virtual environment
-python -m venv venv
-
-# Activate the virtual environment
-# On macOS/Linux:
-source venv/bin/activate
-# On Windows:
-venv\Scripts\activate
-
-# Install Python dependencies
-pip install -r requirements.txt
-```
-
-**Configure environment variables** — Create/edit `/backend/.env`:
-
-```env
-MONGO_URL=mongodb://localhost:27017
-DB_NAME=sheeshmahal_jewellers
-JWT_SECRET=your_secret_key_here
-CORS_ORIGINS=*
-```
-
-> Replace `MONGO_URL` with your MongoDB Atlas connection string if using cloud DB.
-
-### 3. Frontend Setup
-
-```bash
-# Navigate to frontend folder (from project root)
 cd frontend
-
-# Install Node dependencies using Yarn
 yarn install
 ```
 
-**Configure environment variables** — Create/edit `/frontend/.env`:
-
-```env
-REACT_APP_BACKEND_URL=http://localhost:8001
-```
-
-> In production, replace with your deployed backend URL.
-
-### 4. Start MongoDB
-
-If running MongoDB locally:
+### 3. Run the Application
 
 ```bash
-# macOS (Homebrew)
-brew services start mongodb-community
-
-# Linux
-sudo systemctl start mongod
-
-# Windows
-net start MongoDB
-```
-
-Or if using MongoDB Atlas, no action needed — just ensure your `MONGO_URL` in `.env` points to your Atlas cluster.
-
-### 5. Run the Application
-
-Open **two terminal windows**:
-
-**Terminal 1 — Start Backend:**
-
-```bash
-cd backend
-source venv/bin/activate   # Activate virtual env (macOS/Linux)
-uvicorn server:app --host 0.0.0.0 --port 8001 --reload
-```
-
-You should see:
-
-```
-INFO:     Uvicorn running on http://0.0.0.0:8001
-Default admin created: admin@jewellery.com / Admin@123
-Sample jewellery added
-Sample reviews added
-```
-
-**Terminal 2 — Start Frontend:**
-
-```bash
-cd frontend
 yarn start
 ```
 
-The React app opens at **http://localhost:3000**
+The app opens at **http://localhost:3000**
 
-### 6. Verify Everything Works
+### 4. Build for Production
 
-- **Website:** http://localhost:3000
-- **API Health Check:** http://localhost:8001/api/
-- **Admin Panel:** http://localhost:3000/admin/login
-  - Email: `admin@jewellery.com`
-  - Password: `Admin@123`
+```bash
+yarn build
+```
+
+The optimized production build is output to the `frontend/build/` folder. This can be deployed to any static hosting service (Netlify, Vercel, GitHub Pages, etc.)
 
 ---
 
@@ -314,12 +208,34 @@ The React app opens at **http://localhost:3000**
 
 | Action | Command |
 |--------|---------|
-| Install backend deps | `cd backend && pip install -r requirements.txt` |
-| Install frontend deps | `cd frontend && yarn install` |
-| Start backend | `cd backend && uvicorn server:app --host 0.0.0.0 --port 8001 --reload` |
-| Start frontend | `cd frontend && yarn start` |
-| Run backend tests | `cd backend && pytest tests/test_api.py -v` |
-| Start MongoDB (local) | `mongod --bind_ip_all` |
+| Install dependencies | `cd frontend && yarn install` |
+| Start development server | `cd frontend && yarn start` |
+| Build for production | `cd frontend && yarn build` |
+| Add a new dependency | `cd frontend && yarn add <package-name>` |
+
+---
+
+## Deployment
+
+Since this is a fully static site, you can deploy it to any static hosting provider:
+
+- **Vercel** — `vercel deploy` from the `frontend/` folder
+- **Netlify** — connect your repo and set build command to `yarn build`, publish directory to `build`
+- **GitHub Pages** — use `gh-pages` package
+- **Any web server** — just serve the contents of `frontend/build/`
+
+---
+
+## Contact
+
+**Sheeshmahal Jewellers**
+Nati Imli, Ramkatora, Near Rani Sati Mandir, Varanasi, Uttar Pradesh 221001
+Phone: +91 98395 55066
+
+- [Instagram](https://www.instagram.com/sheeshmahal__jewellers)
+- [Facebook](https://www.facebook.com/share/1AzM9fEE9j/)
+- [WhatsApp](https://wa.me/919839555066)
+- [Google Maps](https://www.google.com/maps/place/Sheeshmahal+Jewellers)
 
 ---
 
