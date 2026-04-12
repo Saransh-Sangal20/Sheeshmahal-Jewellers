@@ -1,63 +1,36 @@
-# Sheeshmahal Jewellers - Product Requirements Document
+# Sheeshmahal Jewellers - PRD
 
-## Problem Statement
-Build a jewellery showroom website for a physical store named "Sheeshmahal Jewellers" located in Varanasi, India. The website showcases the store's jewellery collection, provides store information, and includes an admin panel for managing content.
-
-## User Personas
-1. **Customer** - Browses jewellery collection, reads reviews, finds store location/contact
-2. **Store Admin** - Manages jewellery listings and moderates customer reviews
-
-## Core Requirements
-- Modern, minimal theme (stone/amber/dark palette)
-- No shopping cart or checkout functionality
-- Pages: Home, Gallery, About Us, Contact Us, Location
-- Review section with local display + Google reviews link
-- Footer with social media links and "Why shop with us"
-- Admin Panel with JWT authentication for CRUD on jewellery items
-- Google Maps embed on Location page
-
-## Tech Stack
-- **Frontend:** React, Tailwind CSS, shadcn/ui, Framer Motion, Lucide React
-- **Backend:** FastAPI (Python), Motor (async MongoDB driver), PyJWT, bcrypt
-- **Database:** MongoDB
-- **Auth:** JWT (admin only)
+## Original Problem Statement
+Remove backend from the Sheeshmahal Jewellers website. Make it completely frontend-based. Replace MongoDB with JSON files in a separate folder. Keep the design identical. Remove auth completely. Review form on contact page should still work - reviews added via the form should appear on homepage.
 
 ## Architecture
-```
-Frontend (React :3000) --> /api proxy --> Backend (FastAPI :8001) --> MongoDB
-```
+- **Frontend Only**: React (Create React App with CRACO)
+- **Data Source**: Static JSON files in `/frontend/public/data/`
+- **User Reviews**: localStorage + JSON file merge
+- **No Backend**: No FastAPI, no MongoDB, no auth
 
-## Key API Endpoints
-| Method | Endpoint | Auth | Description |
-|--------|----------|------|-------------|
-| GET | /api/jewellery | No | List all jewellery |
-| GET | /api/jewellery/categories | No | Get categories |
-| GET | /api/reviews | No | Get approved reviews |
-| POST | /api/reviews | No | Submit review |
-| POST | /api/admin/login | No | Admin login |
-| GET | /api/admin/verify | Yes | Verify token |
-| POST | /api/jewellery | Yes | Create jewellery |
-| PUT | /api/jewellery/{id} | Yes | Update jewellery |
-| DELETE | /api/jewellery/{id} | Yes | Delete jewellery |
-| GET | /api/admin/reviews | Yes | All reviews |
-| PUT | /api/admin/reviews/{id} | Yes | Approve/reject |
-| DELETE | /api/admin/reviews/{id} | Yes | Delete review |
+## What's Been Implemented (Jan 2026)
+- Removed all backend API calls (axios) from frontend pages
+- Created `/frontend/public/data/jewellery.json` (6 items) and `/frontend/public/data/reviews.json` (4 reviews)
+- Updated `App.js` - removed admin routes, ProtectedRoute import
+- Updated `HomePage.jsx` - fetches from local JSON, merges localStorage reviews
+- Updated `GalleryPage.jsx` - fetches from local JSON, client-side category filtering
+- Updated `ContactPage.jsx` - review form saves to localStorage instead of API
+- Admin pages (AdminLoginPage, AdminDashboard, ProtectedRoute) are no longer routed but files still exist
 
-## What's Implemented (April 6, 2026)
-- All public pages (Home, Gallery, About, Contact, Location)
-- Full admin dashboard with jewellery CRUD and review management
-- JWT authentication for admin
-- Seed data (6 jewellery items, 4 reviews, 1 admin account)
-- Google Maps iframe embed
-- Review submission with approval workflow
-- Comprehensive comments in backend code
-- E2E testing passed: 100% backend (20/20), 100% frontend
+## Data Files
+- `/frontend/public/data/jewellery.json` - Jewellery items (add/edit here to update gallery)
+- `/frontend/public/data/reviews.json` - Base reviews (add/edit here to add permanent reviews)
+- `localStorage["userReviews"]` - User-submitted reviews from the contact form
 
-## Admin Credentials
-- Email: admin@jewellery.com
-- Password: Admin@123
+## Pages
+- `/` - Homepage (hero, categories, featured pieces, reviews marquee, CTA)
+- `/gallery` - Gallery with category filter (All, Gold, Diamond, Silver, Platinum)
+- `/about` - About page with story and values
+- `/contact` - Contact info + review form
+- `/location` - Google Maps embed + directions
 
-## Backlog (P2)
-- Enhanced admin dashboard (image upload via object storage)
-- SEO & meta tags for all pages
-- Additional design polish per user feedback
+## Backlog
+- P0: None (all core features working)
+- P1: Delete unused admin files (AdminLoginPage.jsx, AdminDashboard.jsx, ProtectedRoute.jsx)
+- P2: Consider adding more jewellery items and categories to JSON
