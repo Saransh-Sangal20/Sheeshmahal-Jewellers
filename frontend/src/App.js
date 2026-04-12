@@ -13,6 +13,7 @@ import LocationPage from "@/pages/LocationPage";
 // Components
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             }
           />
         </Routes>
+        <WhatsAppWidget />
         <Toaster position="top-right" />
       </BrowserRouter>
     </div>
