@@ -188,6 +188,141 @@ Access the admin panel at `/admin/login` (not linked from the public site).
 
 ---
 
+## Installation & Setup
+
+### Prerequisites
+
+Make sure you have the following installed on your machine:
+
+- **Python 3.10+** — [Download](https://www.python.org/downloads/)
+- **Node.js 18+** and **Yarn** — [Download Node](https://nodejs.org/) / Install Yarn: `npm install -g yarn`
+- **MongoDB 6+** — [Download](https://www.mongodb.com/try/download/community) or use [MongoDB Atlas](https://www.mongodb.com/atlas) (cloud)
+
+### 1. Clone the Repository
+
+```bash
+git clone <your-repo-url>
+cd sheeshmahal-jewellers
+```
+
+### 2. Backend Setup
+
+```bash
+# Navigate to backend folder
+cd backend
+
+# Create a Python virtual environment
+python -m venv venv
+
+# Activate the virtual environment
+# On macOS/Linux:
+source venv/bin/activate
+# On Windows:
+venv\Scripts\activate
+
+# Install Python dependencies
+pip install -r requirements.txt
+```
+
+**Configure environment variables** — Create/edit `/backend/.env`:
+
+```env
+MONGO_URL=mongodb://localhost:27017
+DB_NAME=sheeshmahal_jewellers
+JWT_SECRET=your_secret_key_here
+CORS_ORIGINS=*
+```
+
+> Replace `MONGO_URL` with your MongoDB Atlas connection string if using cloud DB.
+
+### 3. Frontend Setup
+
+```bash
+# Navigate to frontend folder (from project root)
+cd frontend
+
+# Install Node dependencies using Yarn
+yarn install
+```
+
+**Configure environment variables** — Create/edit `/frontend/.env`:
+
+```env
+REACT_APP_BACKEND_URL=http://localhost:8001
+```
+
+> In production, replace with your deployed backend URL.
+
+### 4. Start MongoDB
+
+If running MongoDB locally:
+
+```bash
+# macOS (Homebrew)
+brew services start mongodb-community
+
+# Linux
+sudo systemctl start mongod
+
+# Windows
+net start MongoDB
+```
+
+Or if using MongoDB Atlas, no action needed — just ensure your `MONGO_URL` in `.env` points to your Atlas cluster.
+
+### 5. Run the Application
+
+Open **two terminal windows**:
+
+**Terminal 1 — Start Backend:**
+
+```bash
+cd backend
+source venv/bin/activate   # Activate virtual env (macOS/Linux)
+uvicorn server:app --host 0.0.0.0 --port 8001 --reload
+```
+
+You should see:
+
+```
+INFO:     Uvicorn running on http://0.0.0.0:8001
+Default admin created: admin@jewellery.com / Admin@123
+Sample jewellery added
+Sample reviews added
+```
+
+**Terminal 2 — Start Frontend:**
+
+```bash
+cd frontend
+yarn start
+```
+
+The React app opens at **http://localhost:3000**
+
+### 6. Verify Everything Works
+
+- **Website:** http://localhost:3000
+- **API Health Check:** http://localhost:8001/api/
+- **Admin Panel:** http://localhost:3000/admin/login
+  - Email: `admin@jewellery.com`
+  - Password: `Admin@123`
+
+---
+
+## Quick Command Reference
+
+| Action | Command |
+|--------|---------|
+| Install backend deps | `cd backend && pip install -r requirements.txt` |
+| Install frontend deps | `cd frontend && yarn install` |
+| Start backend | `cd backend && uvicorn server:app --host 0.0.0.0 --port 8001 --reload` |
+| Start frontend | `cd frontend && yarn start` |
+| Run backend tests | `cd backend && pytest tests/test_api.py -v` |
+| Start MongoDB (local) | `mongod --bind_ip_all` |
+
+---
+
 ## License
 
 Private — Sheeshmahal Jewellers. All rights reserved.
