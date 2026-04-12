@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Award, Users, Heart, Gem } from "lucide-react";
-import about from "../assets/about.png";
-import about2 from "../assets/about2.png";
+import about from "../assets/about.jpeg";
+import about2 from "../assets/about2.jpeg";
 import Seo from "@/components/Seo";
 
 const SHOWROOM_IMAGE = "https://images.unsplash.com/photo-1754573433744-bf2b79d0eaf4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBqZXdlbGxlcnklMjBzaG93cm9vbSUyMGludGVyaW9yJTIwbGlnaHRpbmd8ZW58MHx8fHwxNzY5NTg2MDg4fDA&ixlib=rb-4.1.0&q=85";
@@ -56,7 +56,7 @@ export const AboutPage = () => {
           <img
             src={about}
             alt="Sheeshmahal Jewellers Showroom in Varanasi"
-            className="w-full h-full object-cover object-[center_30%]"
+            className="w-full h-full object-cover object-[center_15%]"
             loading="eager"
             fetchPriority="high"
             decoding="async"

@@ -162,7 +162,7 @@ export const HomePage = () => {
       </section>
 
       {/* Categories Section */}
-      <section className="py-20 md:py-28 bg-white" aria-labelledby="home-seo-title">
+      {/* <section className="py-20 md:py-28 bg-white" aria-labelledby="home-seo-title">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -211,7 +211,7 @@ export const HomePage = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-20 md:py-28" aria-labelledby="home-categories-title">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
