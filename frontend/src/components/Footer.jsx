@@ -183,7 +183,7 @@ export const Footer = () => {
           </p>
           {/* Watermark */}
           <p className="text-stone-600 text-xs tracking-wide">
-            Crafted with precision by{" "}
+            Crafted by{" "}
             <span className="text-amber-400 font-medium hover:text-amber-300 transition">
               Saransh Sangal
             </span>{" "}
