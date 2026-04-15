@@ -135,7 +135,7 @@ export const HomePage = () => {
               <span className="block text-amber-400">Meets Elegance</span>
             </h1>
             <p className="text-stone-300 text-lg mb-8 leading-relaxed max-w-xl">
-              Discover hallmarked gold jewellery, diamond jewellery, and bridal collections in Varanasi, designed with timeless elegance and unmatched craftsmanship.
+              Discover hallmarked gold jewellery, silver jewellery, diamond jewellery, and bridal collections in Varanasi, designed with timeless elegance and unmatched craftsmanship.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button

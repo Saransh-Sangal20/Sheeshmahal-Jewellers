@@ -123,7 +123,7 @@ export const AboutPage = () => {
                 <p>
                   For over 50 years, Sheeshmahal Jewellers has been a trusted name in fine gold, silver and diamond jewellery in Varanasi, 
                   blending timeless craftsmanship with modern elegance. 
-                  Located near Rani Sati Mandir, our showroom has been part of countless weddings, celebrations, and cherished moments across generations. 
+                  Located at Sheeshmahal Chauraha, near Rani Sati Mandir, our showroom has been part of countless weddings, celebrations, and cherished moments across generations. 
                   Every piece we create reflects the rich heritage of Varanasi, crafted by skilled artisans who transform precious metals and gemstones into timeless works of art.
                 </p>
               </div>
@@ -187,7 +187,7 @@ export const AboutPage = () => {
               Our <span className="text-amber-500">Promise</span> to You
             </h2>
             <p className="text-stone-400 text-lg max-w-3xl mx-auto leading-relaxed">
-              At Sheeshmahal Jewellers, a trusted name for gold and diamond jewellery in Varanasi, we promise purity, authenticity, and exceptional craftsmanship. Every piece reflects timeless elegance, blending tradition with lasting value.
+              At Sheeshmahal Jewellers, a trusted name for gold, silver and diamond jewellery in Varanasi, we promise purity, authenticity, and exceptional craftsmanship. Every piece reflects timeless elegance, blending tradition with lasting value.
             </p>
           </motion.div>
         </div>

@@ -3,7 +3,7 @@
     "id": "j1",
     "name": "Royal Gold Necklace",
     "category": "Gold",
-    "description": "Exquisite 22 karat gold necklace with traditional Varanasi craftsmanship. Perfect for weddings and special occasions.",
+    "description": "Exquisite 22 karat gold necklace with traditional Varanasi craftsmanship.",
     "imageUrl": "https://plus.unsplash.com/premium_photo-1724762183134-c17cf5f5bed2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "createdAt": "2025-04-12T00:00:00.000Z"
   },
@@ -19,7 +19,7 @@
     "id": "j3",
     "name": "Traditional Silver Anklet",
     "category": "Silver",
-    "description": "Handcrafted silver anklet with intricate jhankar bells. A beautiful piece of Indian heritage.",
+    "description": "Handcrafted silver anklet with intricate jhankar bells.",
     "imageUrl": "https://imgs.search.brave.com/GZi-9JrlfRpn8kXUE0JCJecmltT4wsgco4Np1_37rqw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2JlLzc0/L2MyL2JlNzRjMmY3/MjY3NzZiYzZkOWQ1/MzljYTQ4ZjE4ZjQ3/LmpwZw",
     "createdAt": "2025-04-10T00:00:00.000Z"
   },
@@ -27,7 +27,7 @@
     "id": "j4",
     "name": "Sapphire Platinum Ring",
     "category": "Platinum",
-    "description": "Stunning blue sapphire set in premium platinum. A symbol of royalty and elegance.",
+    "description": "Stunning blue sapphire set in premium platinum. A symbol of royalty.",
     "imageUrl": "https://images.unsplash.com/photo-1762019313711-8b5d1e4f7ba4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwyfHxkaWFtb25kJTIwcmluZyUyMGx1eHVyeSUyMG1hY3JvJTIwc2hvdHxlbnwwfHx8fDE3Njk1ODYwODZ8MA&ixlib=rb-4.1.0&q=85",
     "createdAt": "2025-04-09T00:00:00.000Z"
   },

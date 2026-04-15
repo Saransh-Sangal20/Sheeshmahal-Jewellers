@@ -131,7 +131,9 @@ export const Footer = () => {
             <div className="flex items-start gap-3 text-stone-400 mb-4">
               <MapPin className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
               <p className="text-sm leading-relaxed">
-                Nati Imli, Ramkatora, Near Rani Sati Mandir,
+                Sheeshmahal Chauraha,
+                <br />
+                Nati Imli, Near Rani Sati Mandir,
                 <br />
                 Varanasi, Uttar Pradesh 221001
               </p>
@@ -173,12 +175,22 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright */}
       <div className="border-t border-stone-800">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 py-6">
-          <p className="text-center text-stone-500 text-sm">
-            &copy; {new Date().getFullYear()} Sheeshmahal Jewellers. All rights
-            reserved.
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-6 text-center space-y-2">
+          {/* Copyright */}
+          <p className="text-stone-500 text-sm">
+            &copy; {new Date().getFullYear()} Sheeshmahal Jewellers. All rights reserved.
+          </p>
+          {/* Watermark */}
+          <p className="text-stone-600 text-xs tracking-wide">
+            Crafted with precision by{" "}
+            <span className="text-amber-400 font-medium hover:text-amber-300 transition">
+              Saransh Sangal
+            </span>{" "}
+            &{" "}
+            <span className="text-amber-400 font-medium hover:text-amber-300 transition">
+              Sandeep Kumar
+            </span>
           </p>
         </div>
       </div>

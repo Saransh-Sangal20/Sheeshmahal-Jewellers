@@ -50,7 +50,7 @@ export const LocationPage = () => {
             </h1>
 
             <p className="text-stone-300 text-lg max-w-2xl mx-auto">
-              Located near Rani Sati Mandir — experience Sheeshmahal Jewellers in person and explore our exclusive gold and diamond collection.
+              Located at Sheeshmahal Chauraha, near Rani Sati Mandir — experience Sheeshmahal Jewellers in person and explore our exclusive gold and diamond collection.
             </p>
           </motion.div>
         </div>
@@ -79,9 +79,9 @@ export const LocationPage = () => {
                       Address
                     </h3>
                     <p className="text-stone-700 text-sm leading-relaxed">
-                      Nati Imli, Ramkatora,
+                      Sheeshmahal Chauraha,
                       <br />
-                      Near Rani Sati Mandir,
+                      Nati Imli, Near Rani Sati Mandir,
                       <br />
                       Varanasi, Uttar Pradesh 221001
                     </p>

@@ -131,9 +131,9 @@ export const ContactPage = () => {
                   <div>
                     <h3 className="font-medium text-stone-900 mb-1">Location</h3>
                     <p className="text-stone-600 leading-relaxed">
-                      Nati Imli, Ramkatora,
+                      Sheeshmahal Chauraha,
                       <br />
-                      Near Rani Sati Mandir,
+                       Nati Imli, Near Rani Sati Mandir,
                       <br />
                       Varanasi, Uttar Pradesh 221001
                     </p>
