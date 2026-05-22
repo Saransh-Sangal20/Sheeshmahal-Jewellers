@@ -113,7 +113,7 @@ export const HomePage = () => {
             alt="Sheeshmahal Jewellers bridal jewellery showcase in Varanasi"
             className="w-full h-full object-cover object-[center_30%]"
             loading="eager"
-            fetchPriority="high"
+            fetchpriority="high"
             decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-stone-900/50 via-stone-900/60 to-stone-900/70" />
@@ -229,7 +229,7 @@ export const HomePage = () => {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid relative grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {categories.map((category, index) => (
               <motion.div
                 key={category.name}
@@ -252,7 +252,7 @@ export const HomePage = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-stone-900/70 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="font-serif text-xl md:text-2xl text-white font-medium">
+                    <h3 className="font-serif text-xl md:text-2xl text-white font-medium absolute bottom-2 left-2 md:bottom-11 md:left-6">
                       {category.name}
                     </h3>
                     <span className="text-stone-300 text-sm flex items-center gap-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -273,7 +273,7 @@ export const HomePage = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6"
+            className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6"
           >
             <div>
               <span className="uppercase tracking-[0.3em] text-sm text-amber-600 font-semibold mb-4 block">

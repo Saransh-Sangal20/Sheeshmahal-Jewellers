@@ -25,7 +25,7 @@ export const Navbar = () => {
       data-testid="navbar"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex relative items-center justify-between h-20">
           {/* Logo */}
           <Link
             to="/"
@@ -34,12 +34,14 @@ export const Navbar = () => {
             aria-label="Sheeshmahal Jewellers home"
           >
             <img src={logo} alt="Sheeshmahal Jewellers logo - best jewellery shop in Varanasi" className="w-35 h-20" />
-            <span className="font-serif text-2xl md:text-3xl font-semibold text-stone-900 tracking-tight">
-              Sheeshmahal
-            </span>
-            <span className="hidden sm:block text-amber-600 font-serif text-2xl font-semibold">
-              Jewellers
-            </span>
+            <div className="flex flex-col md:flex-row md:items-end leading-none">
+              <span className="font-serif text-2xl md:text-3xl font-semibold text-stone-900 tracking-tight">
+                Sheeshmahal
+              </span>
+              <span className="text-amber-600 font-serif md:text-2xl lg:text-2xl text-lg font-semibold md:ml-2">
+                Jewellers
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

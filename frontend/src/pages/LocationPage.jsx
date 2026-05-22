@@ -147,7 +147,7 @@ export const LocationPage = () => {
               transition={{ duration: 0.6 }}
               className="lg:col-span-2"
             >
-              <div className="aspect-[4/3] lg:aspect-auto lg:h-full min-h-[400px] bg-stone-200">
+              <div className="md:aspect-[4/3] lg:aspect-auto lg:h-full min-h-[400px] bg-stone-200">
                 <iframe
                   src={GOOGLE_MAPS_EMBED}
                   width="100%"
