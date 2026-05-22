@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const WHATSAPP_NUMBER = "919839555066";
+const WHATSAPP_NUMBER = "919194055066";
 const WHATSAPP_MESSAGE = "Hi! I'm interested in your jewellery collection. Can you help me?";
 
 export const WhatsAppWidget = () => {
